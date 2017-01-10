@@ -565,7 +565,7 @@ module.exports = ""
 /***/ 615:
 /***/ function(module, exports) {
 
-module.exports = "h1{\r\n  text-align: center;\r\n}\r\n"
+module.exports = "#header {\r\n  width: 1206px;\r\n  margin: 0 auto;\r\n}\r\n\r\nh1{\r\n  text-align: center;\r\n}\r\n"
 
 /***/ },
 
@@ -614,7 +614,7 @@ module.exports = "<p>\n  about works!\n</p>\n"
 /***/ 622:
 /***/ function(module, exports) {
 
-module.exports = "<h1>\n  {{title}}\n</h1>\n<piano [hidden]=\"showAbout\"></piano>\n<about [hidden]=\"!showAbout\"></about>\n"
+module.exports = "<div id=\"header\">\n  <h1>{{title}}</h1>\n<div>\n<piano [hidden]=\"showAbout\"></piano>\n<about [hidden]=\"!showAbout\"></about>\n"
 
 /***/ },
 
