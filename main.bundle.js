@@ -607,49 +607,49 @@ module.exports = ""
 /***/ 621:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  about works!\n</p>\n"
+module.exports = "<p>\r\n  about works!\r\n</p>\r\n"
 
 /***/ },
 
 /***/ 622:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"header\">\n  <h1>{{title}}</h1>\n<div>\n<piano [hidden]=\"showAbout\"></piano>\n<about [hidden]=\"!showAbout\"></about>\n"
+module.exports = "<div id=\"header\">\r\n  <h1>{{title}}</h1>\r\n<div>\r\n<piano [hidden]=\"showAbout\"></piano>\r\n<about [hidden]=\"!showAbout\"></about>\r\n"
 
 /***/ },
 
 /***/ 623:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  keyboard works!\n</p>\n"
+module.exports = "<p>\r\n  keyboard works!\r\n</p>\r\n"
 
 /***/ },
 
 /***/ 624:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  notation works!\n</p>\n"
+module.exports = "<p>\r\n  notation works!\r\n</p>\r\n"
 
 /***/ },
 
 /***/ 625:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  note-info works!\n</p>\n"
+module.exports = "<p>\r\n  note-info works!\r\n</p>\r\n"
 
 /***/ },
 
 /***/ 626:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"container\">\n    <div id=\"notation-component\">\n      <notation></notation>\n    </div>\n    <div id=\"play-mode-component\">\n      <play-mode></play-mode>\n    </div>\n    <div id=\"note-info-component\">\n      <note-info></note-info>\n    </div>\n    <div id=\"keyboard-component\">\n      <keyboard></keyboard>\n    </div>\n    <p id=\"appDetails\">Built using Angular 2 - Source available on <a href=\"https://github.com/deanmalone/PianoPlay/\" target=\"_blank\">GitHub</a></p>\n</div>\n"
+module.exports = "<div id=\"container\">\r\n    <div id=\"notation-component\">\r\n      <notation></notation>\r\n    </div>\r\n    <div id=\"play-mode-component\">\r\n      <play-mode></play-mode>\r\n    </div>\r\n    <div id=\"note-info-component\">\r\n      <note-info></note-info>\r\n    </div>\r\n    <div id=\"keyboard-component\">\r\n      <keyboard></keyboard>\r\n    </div>\r\n    <p id=\"appDetails\">Built with Angular 2 - Source available on <a href=\"https://github.com/deanmalone/PianoPlay/\" target=\"_blank\">GitHub</a></p>\r\n</div>\r\n"
 
 /***/ },
 
 /***/ 627:
 /***/ function(module, exports) {
 
-module.exports = "<p>\n  play-mode works!\n</p>\n"
+module.exports = "<p>\r\n  play-mode works!\r\n</p>\r\n"
 
 /***/ },
 
