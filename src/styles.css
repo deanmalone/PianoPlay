@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  box-sizing: border-box;
+  background: -webkit-linear-gradient(#fcfff4, #e9e9ce);
+  background: -o-linear-gradient(#fcfff4, #e9e9ce);
+  background: linear-gradient(#fcfff4, #e9e9ce);
+  background-attachment:fixed;
+}
+
+body {
+  margin: 0;
+}
