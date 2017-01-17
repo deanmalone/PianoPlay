@@ -1,4 +1,4 @@
-webpackJsonp([0,3],{
+webpackJsonp([0,4],{
 
 /***/ 298:
 /***/ function(module, exports, __webpack_require__) {
@@ -160,7 +160,7 @@ var SoundService = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__safe_pipe__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__safe_pipe__ = __webpack_require__(463);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return SharedModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -212,12 +212,12 @@ webpackEmptyContext.id = 342;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts__ = __webpack_require__(465);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__polyfills_ts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__polyfills_ts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(432);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(433);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(463);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_app_module__ = __webpack_require__(455);
 
 
 
@@ -231,7 +231,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ },
 
-/***/ 452:
+/***/ 453:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -255,8 +255,8 @@ var AboutComponent = (function () {
     AboutComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'about',
-            template: __webpack_require__(624),
-            styles: [__webpack_require__(617)]
+            template: __webpack_require__(626),
+            styles: [__webpack_require__(618)]
         }), 
         __metadata('design:paramtypes', [])
     ], AboutComponent);
@@ -266,7 +266,7 @@ var AboutComponent = (function () {
 
 /***/ },
 
-/***/ 453:
+/***/ 454:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -290,8 +290,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'app-root',
-            template: __webpack_require__(625),
-            styles: [__webpack_require__(618)]
+            template: __webpack_require__(627),
+            styles: [__webpack_require__(619)]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -301,17 +301,17 @@ var AppComponent = (function () {
 
 /***/ },
 
-/***/ 454:
+/***/ 455:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(422);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(428);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__about_about_component__ = __webpack_require__(452);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__piano_piano_module__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(423);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__about_about_component__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__piano_piano_module__ = __webpack_require__(461);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_shared_module__ = __webpack_require__(300);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -359,7 +359,7 @@ var AppModule = (function () {
 
 /***/ },
 
-/***/ 455:
+/***/ 456:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -420,8 +420,8 @@ var KeyboardComponent = (function () {
     KeyboardComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'keyboard',
-            template: __webpack_require__(626),
-            styles: [__webpack_require__(619)]
+            template: __webpack_require__(628),
+            styles: [__webpack_require__(620)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */]) === 'function' && _a) || Object])
     ], KeyboardComponent);
@@ -432,7 +432,7 @@ var KeyboardComponent = (function () {
 
 /***/ },
 
-/***/ 456:
+/***/ 457:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -479,8 +479,8 @@ var NotationComponent = (function () {
     NotationComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'notation',
-            template: __webpack_require__(627),
-            styles: [__webpack_require__(620)]
+            template: __webpack_require__(629),
+            styles: [__webpack_require__(621)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__notation_service__["a" /* NotationService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__notation_service__["a" /* NotationService */]) === 'function' && _b) || Object])
     ], NotationComponent);
@@ -491,7 +491,7 @@ var NotationComponent = (function () {
 
 /***/ },
 
-/***/ 457:
+/***/ 458:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -535,8 +535,8 @@ var NoteInfoComponent = (function () {
     NoteInfoComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'note-info',
-            template: __webpack_require__(628),
-            styles: [__webpack_require__(621)]
+            template: __webpack_require__(630),
+            styles: [__webpack_require__(622)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */]) === 'function' && _a) || Object])
     ], NoteInfoComponent);
@@ -547,7 +547,7 @@ var NoteInfoComponent = (function () {
 
 /***/ },
 
-/***/ 458:
+/***/ 459:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -579,7 +579,7 @@ var PianoNote = (function () {
 
 /***/ },
 
-/***/ 459:
+/***/ 460:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -612,8 +612,8 @@ var PianoComponent = (function () {
     PianoComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'piano',
-            template: __webpack_require__(629),
-            styles: [__webpack_require__(622)]
+            template: __webpack_require__(631),
+            styles: [__webpack_require__(623)]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_1__piano_service__["a" /* PianoService */]) === 'function' && _a) || Object, (typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__sound_service__["a" /* SoundService */] !== 'undefined' && __WEBPACK_IMPORTED_MODULE_2__sound_service__["a" /* SoundService */]) === 'function' && _b) || Object])
     ], PianoComponent);
@@ -624,18 +624,18 @@ var PianoComponent = (function () {
 
 /***/ },
 
-/***/ 460:
+/***/ 461:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_shared_module__ = __webpack_require__(300);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__piano_component__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__keyboard_keyboard_component__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__notation_notation_component__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__play_control_play_control_component__ = __webpack_require__(461);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__note_info_note_info_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__piano_component__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__keyboard_keyboard_component__ = __webpack_require__(456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__notation_notation_component__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__play_control_play_control_component__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__note_info_note_info_component__ = __webpack_require__(458);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__piano_service__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sound_service__ = __webpack_require__(299);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__notation_notation_service__ = __webpack_require__(298);
@@ -684,7 +684,7 @@ var PianoModule = (function () {
 
 /***/ },
 
-/***/ 461:
+/***/ 462:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -708,8 +708,8 @@ var PlayControlComponent = (function () {
     PlayControlComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
             selector: 'play-control',
-            template: __webpack_require__(630),
-            styles: [__webpack_require__(623)]
+            template: __webpack_require__(632),
+            styles: [__webpack_require__(624)]
         }), 
         __metadata('design:paramtypes', [])
     ], PlayControlComponent);
@@ -719,7 +719,7 @@ var PlayControlComponent = (function () {
 
 /***/ },
 
-/***/ 462:
+/***/ 463:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -767,7 +767,7 @@ var SafePipe = (function () {
 
 /***/ },
 
-/***/ 463:
+/***/ 464:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -783,41 +783,41 @@ var environment = {
 
 /***/ },
 
-/***/ 464:
+/***/ 465:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(478);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__ = __webpack_require__(479);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_core_js_es6_symbol__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__ = __webpack_require__(472);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_core_js_es6_object___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_core_js_es6_object__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__ = __webpack_require__(468);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_core_js_es6_function___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_core_js_es6_function__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(473);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__ = __webpack_require__(474);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_core_js_es6_parse_int__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(472);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__ = __webpack_require__(473);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_core_js_es6_parse_float__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(470);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__ = __webpack_require__(471);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_core_js_es6_number___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_core_js_es6_number__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__ = __webpack_require__(470);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_core_js_es6_math___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_core_js_es6_math__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(477);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__ = __webpack_require__(478);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_core_js_es6_string___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_core_js_es6_string__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__ = __webpack_require__(467);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_core_js_es6_date___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_core_js_es6_date__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__ = __webpack_require__(466);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_core_js_es6_array___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_core_js_es6_array__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(475);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__ = __webpack_require__(476);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_core_js_es6_regexp__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_core_js_es6_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_core_js_es6_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(476);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__ = __webpack_require__(477);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_core_js_es6_set___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_core_js_es6_set__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__ = __webpack_require__(475);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_core_js_es6_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__ = __webpack_require__(480);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_core_js_es7_reflect__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__ = __webpack_require__(645);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_zone_js_dist_zone__);
 
 
@@ -839,105 +839,105 @@ var environment = {
 
 /***/ },
 
-/***/ 617:
+/***/ 618:
 /***/ function(module, exports) {
 
 module.exports = ""
 
 /***/ },
 
-/***/ 618:
+/***/ 619:
 /***/ function(module, exports) {
 
 module.exports = "#header {\r\n  width: 1206px;\r\n  margin: 0 auto;\r\n}\r\n\r\nh1{\r\n  text-align: center;\r\n}\r\n"
 
 /***/ },
 
-/***/ 619:
+/***/ 620:
 /***/ function(module, exports) {
 
 module.exports = "/**\r\n * Pure CSS3 Piano by Taufik Nurrohman\r\n * On: 1 December 2011\r\n * URL: http://hompimpaalaihumgambreng.blogspot.com/\r\n * Note: This experiment is under the God Almighty License.\r\n * Please do not replace or remove the attribution above if you want to save/modify this project legally.\r\n * Good luck!\r\n */\r\n\r\n#p-wrapper > * {\r\n    margin:0px;\r\n    padding:0px;\r\n    list-style:none;\r\n}\r\n\r\n#p-wrapper {\r\n    margin-top: 20px;\r\n    background:#000;\r\n    background:-webkit-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);\r\n    background:-webkit-linear-gradient(150deg,#000,#333,#000,#666,#333 70%);\r\n    background:linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);\r\n    width: 1172px;\r\n    position:relative;\r\n    left: 0;\r\n    padding-left: 10px;\r\n    padding-top: 5px;\r\n    box-shadow:0 2px 0px #666,0 3px 0px #555,0 4px 0px #444,0 6px 6px #000,inset 0 -1px 1px rgba(255,255,255,0.5),inset 0 -4px 5px #000;\r\n    border:2px solid #333;\r\n    border-radius:0 0 5px 5px;\r\n    -webkit-animation:taufik 2s;\r\n    animation:taufik 2s;\r\n}\r\n\r\n/* Tuts */\r\nul#piano {\r\n  display:block;\r\n  width:100%;\r\n  height:240px;\r\n  border-top:2px solid #222;\r\n}\r\n\r\nul#piano li {\r\n  list-style:none;\r\n  float:left;\r\n  display:inline;\r\n  background:#aaa;\r\n  width:40px;\r\n  position:relative;\r\n  cursor: pointer;\r\n}\r\n\r\nul#piano li a,ul#piano li div.anchor {\r\n  display:block;\r\n  height:220px;\r\n  background:#fff;\r\n  background:-webkit-linear-gradient(-30deg,#f5f5f5,#fff);\r\n  background:-webkit-linear-gradient(120deg,#f5f5f5,#fff);\r\n  background:linear-gradient(-30deg,#f5f5f5,#fff);\r\n  border:1px solid #ccc;\r\n  box-shadow:inset 0 1px 0px #fff,inset 0 -1px 0px #fff,inset 1px 0px 0px #fff,inset -1px 0px 0px #fff,0 4px 3px rgba(0,0,0,0.7);\r\n  border-radius:0 0 3px 3px;\r\n}\r\n\r\nul#piano li.middlec a,ul#piano li.middlec div.anchor {\r\n    background: #dddddd;\r\n}\r\n\r\nul#piano li a:active,ul#piano li div.anchor:active {\r\n  box-shadow:0 2px 2px rgba(0,0,0,0.4);\r\n  position:relative;\r\n  top:2px;\r\n  height:216px;\r\n}\r\n\r\nul#piano li a:active:before,ul#piano li div.anchor:active:before {\r\n  content:\"\";\r\n  width:0px;\r\n  height:0px;\r\n  border-width:216px 5px 0px;\r\n  border-style:solid;\r\n  border-color:transparent transparent transparent rgba(0,0,0,0.1);\r\n  position:absolute;\r\n  left:0px;\r\n  top:0px;\r\n}\r\n\r\nul#piano li a:active:after,ul#piano li div.anchor:active:after {\r\n  content:\"\";\r\n  width:0px;\r\n  height:0px;\r\n  border-width:216px 5px 0px;\r\n  border-style:solid;\r\n  border-color:transparent rgba(0,0,0,0.1) transparent transparent;\r\n  position:absolute;\r\n  right:0px;\r\n  top:0px;\r\n}\r\n\r\n/* Black Tuts */\r\nul#piano li span {\r\n  position:absolute;\r\n  top:0px;\r\n  left:-12px;\r\n  width:20px;\r\n  height:120px;\r\n  background:#333;\r\n  background:-webkit-linear-gradient(-20deg,#333,#000,#333);\r\n  background:-webkit-linear-gradient(110deg,#333,#000,#333);\r\n  background:linear-gradient(-20deg,#333,#000,#333);\r\n  z-index:10;\r\n  border-width:1px 2px 7px;\r\n  border-style:solid;\r\n  border-color:#666 #222 #111 #555;\r\n  box-shadow:inset 0px -1px 2px rgba(255,255,255,0.4),0 2px 3px rgba(0,0,0,0.4);\r\n  border-radius:0 0 2px 2px;\r\n}\r\n\r\nul#piano li span:active {\r\n  border-bottom-width:2px;\r\n  height:123px;\r\n  box-shadow:inset 0px -1px 1px rgba(255,255,255,0.4),0 1px 0px rgba(0,0,0,0.8),0 2px 2px rgba(0,0,0,0.4),0 -1px 0px #000;\r\n}\r\n\r\n/* Animation */\r\n@-webkit-keyframes taufik {\r\n  from {opacity:0;}\r\n  to {opacity:1;}\r\n}\r\n@keyframes taufik {\r\n  from {opacity:0;}\r\n  to {opacity:1;}\r\n}\r\n"
 
 /***/ },
 
-/***/ 620:
+/***/ 621:
 /***/ function(module, exports) {
 
 module.exports = "div {\r\n   background-color:#ffffff;\r\n}\r\n\r\n/* >>> is alias for /deep/ which will force style down through the child component tree. */\r\n>>> .rest {\r\n  /* display: none; */\r\n}\r\n\r\n/* match all ids that start with rest */\r\n>>> [id^=\"rest\"] {\r\n   display: none;\r\n}\r\n\r\n>>> g.note {\r\n  fill: #000;\r\n  -webkit-transition: fill 0.3s; /* Safari */\r\n  transition: fill 0.3s;\r\n}\r\n\r\n>>> g.note:hover {\r\n  fill: #CC0000;\r\n  cursor: pointer;\r\n}\r\n\r\n"
 
 /***/ },
 
-/***/ 621:
+/***/ 622:
 /***/ function(module, exports) {
 
 module.exports = "h3 {\r\n  margin-top: 10px;\r\n  margin-bottom: 10px;\r\n  text-align: center;\r\n}\r\n\r\n.container {\r\n  margin: 0px auto;\r\n  text-align: center;\r\n  padding-left: 0px;\r\n}\r\n\r\n.note-card {\r\n  display: inline-block;\r\n  text-align: center;\r\n  background-color: #FFFFFF;\r\n  color: #0c0c0c;\r\n  margin: 10px;\r\n  padding: 0px;\r\n  width: 100px;\r\n  vertical-align: top;\r\n  border: 2px solid #A7A771;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  cursor: pointer;\r\n}\r\n\r\n.note-card:hover {\r\n  background-color: #C6C69D;\r\n  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.note-card-or {\r\n  display: inline-block;\r\n  text-align: center;\r\n  font-size: 22px;\r\n  color: #A7A771;\r\n  width: 40px;\r\n  padding-top: 50px;\r\n  vertical-align: top;\r\n}\r\n\r\n.name {\r\n  display: block;\r\n  height: 70px;\r\n  font-size: 50px;\r\n  font-weight: bold;\r\n  padding-top: 8px;\r\n}\r\n\r\n.octave {\r\n  display: block;\r\n  font-size: 14px;\r\n  padding: 4px;\r\n}\r\n"
 
 /***/ },
 
-/***/ 622:
+/***/ 623:
 /***/ function(module, exports) {
 
 module.exports = "#container {\r\n  width: 1186px;\r\n  margin: 0 auto;\r\n}\r\n\r\n#notation-component{\r\n  float: left;\r\n  width: 800px;\r\n  height: 392px;\r\n  background:#fff;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n  margin: 0 20px 20px 0;\r\n}\r\n\r\n#play-control-component {\r\n  float: left;\r\n  width: 346px;\r\n  height: 166px;\r\n  padding: 10px;\r\n  margin: 0 0 20px 0;\r\n  background:#fffff2;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n}\r\n\r\n#note-info-component {\r\n  float: left;\r\n  width: 366px;\r\n  height: 186px;\r\n  padding: 0px;\r\n  margin: 0 0 20px 0;\r\n  background:#fffff2;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n}\r\n\r\n#keyboard-component {\r\n  clear: both;\r\n  width: 1186px;\r\n  margin: 0;\r\n}\r\n\r\n#appDetails {\r\n  text-align: right;\r\n  color: rgba(0,0,0,0.7);\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 10px 0 0 ;\r\n}\r\n\r\n#appDetails a {\r\n  color: rgba(0,0,0,0.5);\r\n}\r\n\r\n#appDetails a:hover {\r\n  text-decoration: none;\r\n}\r\n\r\n\r\n"
 
 /***/ },
 
-/***/ 623:
+/***/ 624:
 /***/ function(module, exports) {
 
 module.exports = "h3 {\r\n  margin-top: 0px;\r\n  margin-bottom: 10px;\r\n  text-align: center;\r\n}\r\n"
 
 /***/ },
 
-/***/ 624:
+/***/ 626:
 /***/ function(module, exports) {
 
 module.exports = "<p>\r\n  about works!\r\n</p>\r\n"
 
 /***/ },
 
-/***/ 625:
+/***/ 627:
 /***/ function(module, exports) {
 
 module.exports = "<div id=\"header\">\r\n  <h1>{{title}}</h1>\r\n<div>\r\n<piano [hidden]=\"showAbout\"></piano>\r\n<about [hidden]=\"!showAbout\"></about>\r\n"
 
 /***/ },
 
-/***/ 626:
+/***/ 628:
 /***/ function(module, exports) {
 
 module.exports = "<div id=\"p-wrapper\">\r\n    <ul id=\"piano\">\r\n        <li *ngFor=\"let pianoKey of pianoKeys\">\r\n            <div class=\"anchor\" (click)=\"keyPress(pianoKey.whiteKeyId)\"></div>\r\n            <span *ngIf=\"pianoKey.blackKeyId \" (click)=\"keyPress(pianoKey.blackKeyId)\"></span>\r\n        </li>\r\n    </ul>\r\n</div>\r\n"
 
 /***/ },
 
-/***/ 627:
+/***/ 629:
 /***/ function(module, exports) {
 
 module.exports = "<div style=\"margin: 0 auto; width:800px;\" [innerHTML]=\"notationAsSVG | safe: 'html'\"></div>\r\n"
 
 /***/ },
 
-/***/ 628:
+/***/ 630:
 /***/ function(module, exports) {
 
 module.exports = "<h3>Now playing</h3>\r\n\r\n<div class=\"container\">\r\n  <div class=\"note-card\" *ngIf=\"currentNote\" (click)=\"playNote(currentNote)\">\r\n      <span class=\"name\">{{currentNote.fullname}}</span>\r\n      <span class=\"octave\">OCTAVE {{currentNote.octave}}</span>\r\n  </div>\r\n\r\n  <div class=\"note-card-or\" *ngIf=\"alternateNote\">\r\n    <span> OR </span>\r\n  </div>\r\n\r\n  <div class=\"note-card\" *ngIf=\"alternateNote\" (click)=\"playNote(alternateNote)\">\r\n    <span class=\"name\">{{alternateNote.fullname}}</span>\r\n    <span class=\"octave\">OCTAVE {{alternateNote.octave}}</span>\r\n  </div>\r\n\r\n</div>\r\n\r\n"
 
 /***/ },
 
-/***/ 629:
+/***/ 631:
 /***/ function(module, exports) {
 
 module.exports = "<div id=\"container\">\r\n    <div id=\"notation-component\">\r\n      <notation></notation>\r\n    </div>\r\n    <div id=\"play-control-component\">\r\n      <play-control></play-control>\r\n    </div>\r\n    <div id=\"note-info-component\">\r\n      <note-info></note-info>\r\n    </div>\r\n    <div id=\"keyboard-component\">\r\n      <keyboard></keyboard>\r\n    </div>\r\n    <p id=\"appDetails\">Built with Angular 2 - Source available on <a href=\"https://github.com/deanmalone/PianoPlay/\" target=\"_blank\">GitHub</a></p>\r\n</div>\r\n"
 
 /***/ },
 
-/***/ 630:
+/***/ 632:
 /***/ function(module, exports) {
 
 module.exports = "<h3>Learn to play</h3>\r\n<p>A simple and fun way for beginners to learn the notes of a piano.</p>\r\n<p>Play notes on the <b>piano keyboard</b> and watch them appear in the <b>piano score</b> and in the <b>Now Playing</b> panel. </p>\r\n"
 
 /***/ },
 
-/***/ 643:
+/***/ 646:
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(343);
@@ -952,7 +952,7 @@ module.exports = __webpack_require__(343);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__piano_note__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__piano_note__ = __webpack_require__(459);
 /* harmony export (binding) */ __webpack_require__.d(exports, "a", function() { return PianoService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1076,5 +1076,5 @@ var PianoService = (function () {
 
 /***/ }
 
-},[643]);
+},[646]);
 //# sourceMappingURL=main.bundle.map
