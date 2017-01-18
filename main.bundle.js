@@ -21,18 +21,15 @@ var NotationService = (function () {
         this.maxNotes = 16;
         this.spacingNotesXml = [];
         this.notes = [];
-    }
-    NotationService.prototype.initialise = function (maxNotes) {
-        this.maxNotes = maxNotes;
         this.vrvToolkit = new verovio.toolkit();
         // create hidden notes to ensure the staff is drawn full width.
         // notes are hidden via css class
         for (var i = 0; i < this.maxNotes; i++) {
             this.spacingNotesXml.push("<note xml:id=\"rest-hidden-" + i.toString() + "\" dur=\"4\" oct=\"6\" pname=\"c\" stem.dir=\"up\" />");
         }
-    };
+    }
     NotationService.prototype.addNote = function (note) {
-        if (this.notes.length > this.maxNotes - 1) {
+        if (this.notes.length == this.maxNotes) {
             this.notes.length = 0;
         }
         this.notes.push(note);
@@ -41,9 +38,8 @@ var NotationService = (function () {
         var trepleNotesXml = [];
         var bassNotesXml = [];
         for (var i = 0; i < this.notes.length; i++) {
-            var n = i + 1;
-            var noteXml = "<note xml:id=\"" + n + "\" dur=\"4\" oct=\"" + this.notes[i].octave + "\" pname=\"" + this.notes[i].name + "\" " + (this.notes[i].accidental ? 'accid="' + this.notes[i].accidental + '"' : '') + " />";
-            var restXml = "<rest xml:id=\"rest-" + n + "\" dur=\"4\" oct=\"" + this.notes[i].octave + "\" pname=\"" + this.notes[i].name + "\" " + (this.notes[i].accidental ? 'accid="' + this.notes[i].accidental + '"' : '') + "/>";
+            var noteXml = "<note xml:id=\"" + i + "\" dur=\"4\" oct=\"" + this.notes[i].octave + "\" pname=\"" + this.notes[i].name + "\" " + (this.notes[i].accidental ? 'accid="' + this.notes[i].accidental + '"' : '') + " />";
+            var restXml = "<rest xml:id=\"rest-" + i + "\" dur=\"4\" oct=\"" + this.notes[i].octave + "\" pname=\"" + this.notes[i].name + "\" " + (this.notes[i].accidental ? 'accid="' + this.notes[i].accidental + '"' : '') + "/>";
             if (this.notes[i].octave > 3) {
                 trepleNotesXml.push(noteXml);
                 bassNotesXml.push(restXml);
@@ -62,9 +58,6 @@ var NotationService = (function () {
             adjustPageHeight: 1
         };
         var renderedNotation = this.vrvToolkit.renderData(notationXML, options);
-        // highlight the most recent note
-        //   let nid='id="' + this.notes.length +  '"';
-        //   renderedNotation = renderedNotation.replace(new RegExp( nid, 'g' ), nid + ' style="fill:#f00;" onClick="this.clickedIt(this.id)" ');
         return renderedNotation;
     };
     NotationService = __decorate([
@@ -463,18 +456,18 @@ var NotationComponent = (function () {
         });
     }
     NotationComponent.prototype.ngOnInit = function () {
-        this.notationService.initialise(16);
+        //console.log('ngOnInit');
+        // Render the (empty) piano score (will contain hidden notes to ensure staff spans full width)
         this.notationAsSVG = this.notationService.renderNotation();
     };
     NotationComponent.prototype.ngAfterViewChecked = function () {
-        console.log('ngAfterViewChecked');
+        //console.log('ngAfterViewChecked');
         var self = this;
         $("g.note").click(function () { self.noteClicked(this.id); });
     };
     NotationComponent.prototype.noteClicked = function (id) {
         console.log('noteClicked: ' + id);
-        var noteNum = parseInt(id) - 1;
-        this.pianoService.playNote(this.notationService.notes[noteNum].keyId, this.notationService.notes[noteNum].noteId);
+        this.pianoService.playNote(this.notationService.notes[id].keyId, this.notationService.notes[id].noteId);
     };
     NotationComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["G" /* Component */])({
@@ -517,10 +510,6 @@ var NoteInfoComponent = (function () {
             _this.currentNote = pianoNote;
             _this.alternateNote = _this.pianoService.getAlternateNote(pianoNote.keyId, pianoNote.noteId);
         });
-        this.subscription = pianoService.noteSelected$.subscribe(function (pianoNote) {
-            _this.currentNote = pianoNote;
-            _this.alternateNote = _this.pianoService.getAlternateNote(pianoNote.keyId, pianoNote.noteId);
-        });
     }
     NoteInfoComponent.prototype.ngOnInit = function () {
     };
@@ -529,7 +518,7 @@ var NoteInfoComponent = (function () {
         this.subscription.unsubscribe();
     };
     NoteInfoComponent.prototype.playNote = function (note) {
-        console.log(note);
+        //console.log(note);
         this.pianoService.playNote(note.keyId, note.noteId);
     };
     NoteInfoComponent = __decorate([
@@ -556,6 +545,9 @@ var PianoNote = (function () {
     function PianoNote(keyId, noteId) {
         this.keyId = keyId;
         this.noteId = noteId;
+        if (keyId < 16 || keyId > 64) {
+            throw new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
+        }
         if (noteId.length < 2 || noteId.length > 3) {
             throw new RangeError("noteId is invalid");
         }
@@ -863,7 +855,7 @@ module.exports = "/**\r\n * Pure CSS3 Piano by Taufik Nurrohman\r\n * On: 1 Dece
 /***/ 621:
 /***/ function(module, exports) {
 
-module.exports = "div {\r\n   background-color:#ffffff;\r\n}\r\n\r\n/* >>> is alias for /deep/ which will force style down through the child component tree. */\r\n>>> .rest {\r\n  /* display: none; */\r\n}\r\n\r\n/* match all ids that start with rest */\r\n>>> [id^=\"rest\"] {\r\n   display: none;\r\n}\r\n\r\n>>> g.note {\r\n  fill: #000;\r\n  -webkit-transition: fill 0.3s; /* Safari */\r\n  transition: fill 0.3s;\r\n}\r\n\r\n>>> g.note:hover {\r\n  fill: #CC0000;\r\n  cursor: pointer;\r\n}\r\n\r\n"
+module.exports = "div {\r\n   background-color:#ffffff;\r\n}\r\n\r\n/* >>> is alias for /deep/ which will force style down through the child component tree. */\r\n/* match all ids that start with rest */\r\n>>> [id^=\"rest\"] {\r\n   display: none;\r\n}\r\n\r\n>>> g.note {\r\n  fill: #000;\r\n  -webkit-transition: fill 0.3s; /* Safari */\r\n  transition: fill 0.3s;\r\n}\r\n\r\n>>> g.note:hover {\r\n  fill: #CC0000;\r\n  cursor: pointer;\r\n}\r\n\r\n"
 
 /***/ },
 
@@ -933,7 +925,7 @@ module.exports = "<div id=\"container\">\r\n    <div id=\"notation-component\">\
 /***/ 632:
 /***/ function(module, exports) {
 
-module.exports = "<h3>Learn to play</h3>\r\n<p>A simple and fun way for beginners to learn the notes of a piano.</p>\r\n<p>Play notes on the <b>piano keyboard</b> and watch them appear in the <b>piano score</b> and in the <b>Now Playing</b> panel. </p>\r\n"
+module.exports = "<h3>Learn Music Notation</h3>\r\n<p><b>Piano Play</b> is a simple and fun way for beginners to learn music notation.</p>\r\n<p>Simply press the keys on the <b>piano</b> and see the notes appear on the <b>piano score</b> and in the <b>Now playing</b> panel.</p>\r\n"
 
 /***/ },
 
@@ -970,10 +962,8 @@ var PianoService = (function () {
     function PianoService() {
         // Observable sources
         this.pianoNotePlayedSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
-        this.pianoNoteSelectedSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
         // Observable streams
         this.notePlayed$ = this.pianoNotePlayedSource.asObservable();
-        this.noteSelected$ = this.pianoNoteSelectedSource.asObservable();
         this.pianoKeyNoteMap = [
             { keyId: 16, notes: ["c2"] },
             { keyId: 17, notes: ["c2s", "d2f"] },
@@ -1028,7 +1018,7 @@ var PianoService = (function () {
     }
     PianoService.prototype.getNote = function (keyId, noteId) {
         if (keyId < 16 || keyId > 64) {
-            new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
+            throw new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
         }
         // lookup notes based on keyId
         var notes = this.pianoKeyNoteMap[keyId - 16].notes;
@@ -1044,14 +1034,9 @@ var PianoService = (function () {
         console.log("playNote: sender=" + pianoNote.sender + ", keyId=" + pianoNote.keyId + ", noteId=" + pianoNote.noteId + ", fullname=" + pianoNote.fullname);
         this.pianoNotePlayedSource.next(pianoNote);
     };
-    PianoService.prototype.selectNote = function (keyId, noteId) {
-        var pianoNote = this.getNote(keyId, noteId);
-        console.log("selectNote: sender=" + pianoNote.sender + ", keyId=" + pianoNote.keyId + ", noteId=" + pianoNote.noteId + ", fullname=" + pianoNote.fullname);
-        this.pianoNoteSelectedSource.next(pianoNote);
-    };
     PianoService.prototype.getAlternateNote = function (keyId, noteId) {
         if (keyId < 16 || keyId > 64) {
-            new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
+            throw new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
         }
         var alternateNote;
         var notes = this.pianoKeyNoteMap[keyId - 16].notes;
