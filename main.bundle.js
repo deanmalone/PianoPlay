@@ -548,6 +548,7 @@ var PianoNote = (function () {
         if (keyId < 16 || keyId > 64) {
             throw new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
         }
+        // Todo: add better validation of NoteId
         if (noteId.length < 2 || noteId.length > 3) {
             throw new RangeError("noteId is invalid");
         }
@@ -841,7 +842,7 @@ module.exports = ""
 /***/ 619:
 /***/ function(module, exports) {
 
-module.exports = "#header {\r\n  width: 1206px;\r\n  margin: 0 auto;\r\n}\r\n\r\nh1{\r\n  text-align: center;\r\n}\r\n"
+module.exports = "#header {\r\n  width: 1186px;\r\n  margin: 0 auto;\r\n}\r\n\r\nh1{\r\n  text-align: center;\r\n}\r\n"
 
 /***/ },
 
@@ -890,7 +891,7 @@ module.exports = "<p>\r\n  about works!\r\n</p>\r\n"
 /***/ 627:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"header\">\r\n  <h1>{{title}}</h1>\r\n<div>\r\n<piano [hidden]=\"showAbout\"></piano>\r\n<about [hidden]=\"!showAbout\"></about>\r\n"
+module.exports = "<div id=\"header\">\r\n  <h1>{{title}}</h1>\r\n<div>\r\n<piano></piano>\r\n"
 
 /***/ },
 
@@ -1020,9 +1021,9 @@ var PianoService = (function () {
         if (keyId < 16 || keyId > 64) {
             throw new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
         }
-        // lookup notes based on keyId
+        // get the IPianoKeyNoteMapping for the specified keyId
         var notes = this.pianoKeyNoteMap[keyId - 16].notes;
-        // find the noteId if specified, otherwise use default.
+        // find the noteId if specified, otherwise use default note (first one).
         var note = notes.find(function (x) { return x == noteId; });
         if (!note) {
             note = notes[0];
