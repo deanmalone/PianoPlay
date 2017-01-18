@@ -12,7 +12,7 @@
   margin: 0 20px 20px 0;
 }
 
-#play-mode-component {
+#play-control-component {
   float: left;
   width: 346px;
   height: 166px;
@@ -24,9 +24,9 @@
 
 #note-info-component {
   float: left;
-  width: 346px;
-  height: 166px;
-  padding: 10px;
+  width: 366px;
+  height: 186px;
+  padding: 0px;
   margin: 0 0 20px 0;
   background:#fffff2;
   box-shadow: 0 10px 6px -6px#777;
@@ -35,9 +35,6 @@
 #keyboard-component {
   clear: both;
   width: 1186px;
-  height: 250px;
-  background:#fff;
-  box-shadow: 0 10px 6px -6px#777;
   margin: 0;
 }
 

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription }   from 'rxjs/Subscription';
+
+import { PianoNote } from '../piano-note';
+import { PianoService } from '../piano.service';
 
 @Component({
   selector: 'note-info',
@@ -7,9 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteInfoComponent implements OnInit {
 
-  constructor() { }
+  subscription: Subscription;
+  currentNote: PianoNote;
+  alternateNote?: PianoNote;
+
+  constructor(private pianoService: PianoService) {
+
+    this.subscription = pianoService.notePlayed$.subscribe(
+      pianoNote => {
+        this.currentNote = pianoNote;
+        this.alternateNote = this.pianoService.getAlternateNote(pianoNote.keyId, pianoNote.noteId);
+    });
+
+  }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    // prevent memory leak when component destroyed
+    this.subscription.unsubscribe();
+  }
+
+  playNote(note: PianoNote): void {
+    //console.log(note);
+    this.pianoService.playNote(note.keyId, note.noteId);
   }
 
 }

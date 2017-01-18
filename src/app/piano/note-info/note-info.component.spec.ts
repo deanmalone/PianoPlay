@@ -4,14 +4,20 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { NoteInfoComponent } from './note-info.component';
+import { PianoNote } from '../piano-note';
+import { PianoService } from '../piano.service';
 
 describe('NoteInfoComponent', () => {
   let component: NoteInfoComponent;
   let fixture: ComponentFixture<NoteInfoComponent>;
+  let pianoService: PianoService = new PianoService();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NoteInfoComponent ]
+      declarations: [ NoteInfoComponent ],
+      providers:    [
+        {provide: PianoService, useValue: pianoService}
+      ]
     })
     .compileComponents();
   }));
@@ -25,4 +31,5 @@ describe('NoteInfoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

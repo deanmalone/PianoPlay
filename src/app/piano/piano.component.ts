@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription }   from 'rxjs/Subscription';
+
+import { PianoService } from './piano.service';
+import { SoundService } from './sound.service';
 
 @Component({
   selector: 'piano',
@@ -7,7 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PianoComponent implements OnInit {
 
-  constructor() { }
+  subscription: Subscription;
+
+  constructor(private pianoService: PianoService, private soundService: SoundService) {
+
+        this.subscription = pianoService.notePlayed$.subscribe(
+          pianoNote => {
+            soundService.playNote(pianoNote.keyId);
+        });
+
+  }
 
   ngOnInit() {
   }

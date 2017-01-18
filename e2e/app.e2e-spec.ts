@@ -1,14 +1,14 @@
 import { PianoPlayPage } from './app.po';
 
-describe('piano-play App', function() {
+describe('Piano Play App', function() {
   let page: PianoPlayPage;
 
   beforeEach(() => {
     page = new PianoPlayPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display App Title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('PIANO PLAY');
   });
 });

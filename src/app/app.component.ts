@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Piano Play';
+  title = 'PIANO PLAY';
   showAbout = false;
 }

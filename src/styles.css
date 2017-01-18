@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("//fonts.googleapis.com/css?family=ABeeZee");
+
 html {
   box-sizing: border-box;
   background: -webkit-linear-gradient(#fcfff4, #e9e9ce);
@@ -8,5 +10,6 @@ html {
 }
 
 body {
+  font-family: 'ABeeZee';
   margin: 0;
 }
