@@ -1,11 +1,11 @@
 #container {
-  width: 1186px;
+  width: 1128px;
   margin: 20px auto 0px;
 }
 
 #side-content {
   float: left;
-  width: 386px;
+  width: 328px;
 }
 
 #notation-component {
@@ -19,7 +19,7 @@
 
 #keyboard-component {
   clear: both;
-  width: 1186px;
+  width: 1128px;
   margin: 0;
 }
 
@@ -28,7 +28,7 @@
   color: rgba(0,0,0,0.7);
   font-size: 14px;
   margin: 0;
-  padding: 10px 0 0 ;
+  padding: 10px 5px 0 0 ;
 }
 
 #appDetails a {

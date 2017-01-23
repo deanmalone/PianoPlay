@@ -21,7 +21,7 @@
     background:-ms-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
     background:-o-linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
     background:linear-gradient(-60deg,#000,#333,#000,#666,#333 70%);
-    width: 1172px;
+    width: 1114px;
     position:relative;
     left: 0;
     padding-left: 10px;
@@ -51,7 +51,7 @@ ul#piano li {
   float:left;
   display:inline;
   background:#aaa;
-  width:40px;
+  width:38px;
   position:relative;
   cursor: pointer;
 }
