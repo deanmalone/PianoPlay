@@ -1,35 +1,20 @@
 #container {
   width: 1186px;
-  margin: 0 auto;
+  margin: 20px auto 0px;
 }
 
-#notation-component{
+#side-content {
   float: left;
+  width: 386px;
+}
+
+#notation-component {
+  float: right;
   width: 800px;
   height: 392px;
   background:#fff;
   box-shadow: 0 10px 6px -6px#777;
-  margin: 0 20px 20px 0;
-}
-
-#play-control-component {
-  float: left;
-  width: 346px;
-  height: 166px;
-  padding: 10px;
   margin: 0 0 20px 0;
-  background:#fffff2;
-  box-shadow: 0 10px 6px -6px#777;
-}
-
-#note-info-component {
-  float: left;
-  width: 366px;
-  height: 186px;
-  padding: 0px;
-  margin: 0 0 20px 0;
-  background:#fffff2;
-  box-shadow: 0 10px 6px -6px#777;
 }
 
 #keyboard-component {
@@ -54,4 +39,10 @@
   text-decoration: none;
 }
 
-
+.panel {
+  height: 186px;
+  padding: 0px;
+  margin: 0 20px 20px 0;
+  background:#FFFFF2;
+  box-shadow: 0 10px 6px -6px#777;
+}

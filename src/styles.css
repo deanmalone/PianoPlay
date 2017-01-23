@@ -3,13 +3,14 @@
 
 html {
   box-sizing: border-box;
-  background: -webkit-linear-gradient(#fcfff4, #e9e9ce);
-  background: -o-linear-gradient(#fcfff4, #e9e9ce);
-  background: linear-gradient(#fcfff4, #e9e9ce);
+  background: -webkit-linear-gradient(#e9e9ce, #fcfff4);
+  background: -o-linear-gradient(#e9e9ce, #fcfff4);
+  background: linear-gradient(#e9e9ce, #fcfff4);
   background-attachment:fixed;
 }
 
 body {
   font-family: 'ABeeZee';
   margin: 0;
+  padding: 0;
 }

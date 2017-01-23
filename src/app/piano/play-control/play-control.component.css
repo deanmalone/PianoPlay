@@ -1,5 +1,12 @@
-h3 {
-  margin-top: 0px;
-  margin-bottom: 10px;
+.header {
   text-align: center;
+  margin: 0px;
+  padding: 5px;
+  font-size: 22px;
+  color: #FFFFF2;
+  background-color: #69692D;
+}
+
+.content {
+  padding: 10px;
 }
