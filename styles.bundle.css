@@ -2,25 +2,10 @@
 
 html {
   box-sizing: border-box;
-  /*
-  background: -webkit-linear-gradient(#E9E9CE, #A7A771);
-  background: -o-linear-gradient(#E9E9CE, #A7A771);
-  background: linear-gradient(#E9E9CE, #A7A771);
-  background-attachment:fixed;
-  */
   background: -webkit-linear-gradient(#e9e9ce, #fcfff4);
   background: linear-gradient(#e9e9ce, #fcfff4);
   background-attachment:fixed;
 }
-
-/*
-  background: -webkit-linear-gradient(#fcfff4, #e9e9ce);
-  background: -o-linear-gradient(#fcfff4, #e9e9ce);
-  background: linear-gradient(#fcfff4, #e9e9ce);
-  #C6C69D
-#E9E9CE
-A7A771
-*/
 
 body {
   font-family: 'ABeeZee';

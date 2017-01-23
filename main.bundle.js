@@ -91,14 +91,13 @@ var SoundService = (function () {
         this.buffers = {};
         // load wav files for each piano key.
         try {
-            // Fix up prefixing
+            // Hack to support AudioContext on iOS
             if (typeof AudioContext !== 'undefined') {
                 this.context = new AudioContext();
             }
             else if (typeof window.webkitAudioContext !== 'undefined') {
                 this.context = new window.webkitAudioContext();
             }
-            //this.context = new AudioContext();
             this.loadSounds();
         }
         catch (e) {
@@ -933,7 +932,7 @@ module.exports = "<div id=\"container\">\r\n  <div id=\"side-content\">\r\n    <
 /***/ 632:
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"panel\">\r\n  <div class=\"header\">Piano Play</div>\r\n  <div class=\"content\">\r\n    <span>A simple and fun way for beginners to learn music notation.</span><br />\r\n    <span>Simply press the keys on the <b>piano</b> and see the notes appear on the <b>piano score</b> and in the <b>Now playing</b> panel.</span>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"panel\">\r\n  <div class=\"header\">Piano Play</div>\r\n  <div class=\"content\">\r\n    <span>A simple and fun way for beginners to learn music notation.</span><br /><br />\r\n    <span>Simply press the keys on the <b>piano</b> and see the notes appear on the <b>piano score</b> and in the <b>Now playing</b> panel.</span>\r\n  </div>\r\n</div>\r\n"
 
 /***/ },
 
