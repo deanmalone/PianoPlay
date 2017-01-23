@@ -10,11 +10,16 @@ export class SoundService {
 
       // load wav files for each piano key.
       try {
-         this.context = new AudioContext();
-         this.loadSounds();
+        // Hack to support AudioContext on iOS
+        if (typeof AudioContext !== 'undefined') {
+          this.context = new AudioContext();
+        } else if (typeof (window as any).webkitAudioContext !== 'undefined') {
+          this.context = new (window as any).webkitAudioContext();
+        }
+        this.loadSounds();
       }
       catch(e) {
-         alert("Web Audio API is not supported in this browser");
+        alert("Web Audio API is not supported in this browser");
       }
 
     }
