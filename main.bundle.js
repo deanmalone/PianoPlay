@@ -91,6 +91,8 @@ var SoundService = (function () {
         this.buffers = {};
         // load wav files for each piano key.
         try {
+            // Fix up prefixing
+            AudioContext = AudioContext || this.webkitAudioContext;
             this.context = new AudioContext();
             this.loadSounds();
         }
@@ -842,7 +844,7 @@ module.exports = ""
 /***/ 619:
 /***/ function(module, exports) {
 
-module.exports = "#header {\r\n  width: 1186px;\r\n  margin: 0 auto;\r\n}\r\n\r\nh1{\r\n  text-align: center;\r\n}\r\n"
+module.exports = ""
 
 /***/ },
 
@@ -863,21 +865,21 @@ module.exports = "div {\r\n   background-color:#ffffff;\r\n}\r\n\r\n/* >>> is al
 /***/ 622:
 /***/ function(module, exports) {
 
-module.exports = "h3 {\r\n  margin-top: 10px;\r\n  margin-bottom: 10px;\r\n  text-align: center;\r\n}\r\n\r\n.container {\r\n  margin: 0px auto;\r\n  text-align: center;\r\n  padding-left: 0px;\r\n}\r\n\r\n.note-card {\r\n  display: inline-block;\r\n  text-align: center;\r\n  background-color: #FFFFFF;\r\n  color: #0c0c0c;\r\n  margin: 10px;\r\n  padding: 0px;\r\n  width: 100px;\r\n  vertical-align: top;\r\n  border: 2px solid #A7A771;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  cursor: pointer;\r\n}\r\n\r\n.note-card:hover {\r\n  background-color: #C6C69D;\r\n  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.note-card-or {\r\n  display: inline-block;\r\n  text-align: center;\r\n  font-size: 22px;\r\n  color: #A7A771;\r\n  width: 40px;\r\n  padding-top: 50px;\r\n  vertical-align: top;\r\n}\r\n\r\n.name {\r\n  display: block;\r\n  height: 70px;\r\n  font-size: 50px;\r\n  font-weight: bold;\r\n  padding-top: 8px;\r\n}\r\n\r\n.octave {\r\n  display: block;\r\n  font-size: 14px;\r\n  padding: 4px;\r\n}\r\n"
+module.exports = ".header {\r\n  text-align: center;\r\n  margin: 0 0 10px 0;\r\n  padding: 5px;\r\n  font-size: 20px;\r\n  color: #69692D;\r\n  background-color: #C6C69D;\r\n}\r\n\r\n.container {\r\n  margin: 0px auto;\r\n  text-align: center;\r\n  padding-left: 0px;\r\n}\r\n\r\n.note-card {\r\n  display: inline-block;\r\n  text-align: center;\r\n  background-color: #FFFFFF;\r\n  color: #0c0c0c;\r\n  margin: 10px;\r\n  padding: 0px;\r\n  width: 100px;\r\n  vertical-align: top;\r\n  border: 2px solid #A7A771;\r\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\r\n  -webkit-transition: 0.3s;\r\n  transition: 0.3s;\r\n  cursor: pointer;\r\n}\r\n\r\n.note-card:hover {\r\n  background-color: #C6C69D;\r\n  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\r\n}\r\n\r\n.note-card-or {\r\n  display: inline-block;\r\n  text-align: center;\r\n  font-size: 22px;\r\n  color: #A7A771;\r\n  width: 40px;\r\n  padding-top: 50px;\r\n  vertical-align: top;\r\n}\r\n\r\n.name {\r\n  display: block;\r\n  height: 70px;\r\n  font-size: 50px;\r\n  font-weight: bold;\r\n  padding-top: 8px;\r\n}\r\n\r\n.octave {\r\n  display: block;\r\n  font-size: 14px;\r\n  padding: 4px;\r\n}\r\n"
 
 /***/ },
 
 /***/ 623:
 /***/ function(module, exports) {
 
-module.exports = "#container {\r\n  width: 1186px;\r\n  margin: 0 auto;\r\n}\r\n\r\n#notation-component{\r\n  float: left;\r\n  width: 800px;\r\n  height: 392px;\r\n  background:#fff;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n  margin: 0 20px 20px 0;\r\n}\r\n\r\n#play-control-component {\r\n  float: left;\r\n  width: 346px;\r\n  height: 166px;\r\n  padding: 10px;\r\n  margin: 0 0 20px 0;\r\n  background:#fffff2;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n}\r\n\r\n#note-info-component {\r\n  float: left;\r\n  width: 366px;\r\n  height: 186px;\r\n  padding: 0px;\r\n  margin: 0 0 20px 0;\r\n  background:#fffff2;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n}\r\n\r\n#keyboard-component {\r\n  clear: both;\r\n  width: 1186px;\r\n  margin: 0;\r\n}\r\n\r\n#appDetails {\r\n  text-align: right;\r\n  color: rgba(0,0,0,0.7);\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 10px 0 0 ;\r\n}\r\n\r\n#appDetails a {\r\n  color: rgba(0,0,0,0.5);\r\n}\r\n\r\n#appDetails a:hover {\r\n  text-decoration: none;\r\n}\r\n\r\n\r\n"
+module.exports = "#container {\r\n  width: 1186px;\r\n  margin: 20px auto 0px;\r\n}\r\n\r\n#side-content {\r\n  float: left;\r\n  width: 386px;\r\n}\r\n\r\n#notation-component {\r\n  float: right;\r\n  width: 800px;\r\n  height: 392px;\r\n  background:#fff;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n  margin: 0 0 20px 0;\r\n}\r\n\r\n#keyboard-component {\r\n  clear: both;\r\n  width: 1186px;\r\n  margin: 0;\r\n}\r\n\r\n#appDetails {\r\n  text-align: right;\r\n  color: rgba(0,0,0,0.7);\r\n  font-size: 14px;\r\n  margin: 0;\r\n  padding: 10px 0 0 ;\r\n}\r\n\r\n#appDetails a {\r\n  color: rgba(0,0,0,0.5);\r\n}\r\n\r\n#appDetails a:hover {\r\n  text-decoration: none;\r\n}\r\n\r\n.panel {\r\n  height: 186px;\r\n  padding: 0px;\r\n  margin: 0 20px 20px 0;\r\n  background:#FFFFF2;\r\n  box-shadow: 0 10px 6px -6px#777;\r\n}\r\n"
 
 /***/ },
 
 /***/ 624:
 /***/ function(module, exports) {
 
-module.exports = "h3 {\r\n  margin-top: 0px;\r\n  margin-bottom: 10px;\r\n  text-align: center;\r\n}\r\n"
+module.exports = ".header {\r\n  text-align: center;\r\n  margin: 0px;\r\n  padding: 5px;\r\n  font-size: 22px;\r\n  color: #FFFFF2;\r\n  background-color: #69692D;\r\n}\r\n\r\n.content {\r\n  padding: 10px;\r\n}\r\n"
 
 /***/ },
 
@@ -891,7 +893,7 @@ module.exports = "<p>\r\n  about works!\r\n</p>\r\n"
 /***/ 627:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"header\">\r\n  <h1>{{title}}</h1>\r\n<div>\r\n<piano></piano>\r\n"
+module.exports = "<piano></piano>\r\n"
 
 /***/ },
 
@@ -912,21 +914,21 @@ module.exports = "<div style=\"margin: 0 auto; width:800px;\" [innerHTML]=\"nota
 /***/ 630:
 /***/ function(module, exports) {
 
-module.exports = "<h3>Now playing</h3>\r\n\r\n<div class=\"container\">\r\n  <div class=\"note-card\" *ngIf=\"currentNote\" (click)=\"playNote(currentNote)\">\r\n      <span class=\"name\">{{currentNote.fullname}}</span>\r\n      <span class=\"octave\">OCTAVE {{currentNote.octave}}</span>\r\n  </div>\r\n\r\n  <div class=\"note-card-or\" *ngIf=\"alternateNote\">\r\n    <span> OR </span>\r\n  </div>\r\n\r\n  <div class=\"note-card\" *ngIf=\"alternateNote\" (click)=\"playNote(alternateNote)\">\r\n    <span class=\"name\">{{alternateNote.fullname}}</span>\r\n    <span class=\"octave\">OCTAVE {{alternateNote.octave}}</span>\r\n  </div>\r\n\r\n</div>\r\n\r\n"
+module.exports = "<div class=\"header\">Now playing</div>\r\n<div class=\"container\">\r\n  <div class=\"note-card\" *ngIf=\"currentNote\" (click)=\"playNote(currentNote)\">\r\n      <span class=\"name\">{{currentNote.fullname}}</span>\r\n      <span class=\"octave\">OCTAVE {{currentNote.octave}}</span>\r\n  </div>\r\n  <div class=\"note-card-or\" *ngIf=\"alternateNote\">\r\n    <span> OR </span>\r\n  </div>\r\n  <div class=\"note-card\" *ngIf=\"alternateNote\" (click)=\"playNote(alternateNote)\">\r\n    <span class=\"name\">{{alternateNote.fullname}}</span>\r\n    <span class=\"octave\">OCTAVE {{alternateNote.octave}}</span>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ },
 
 /***/ 631:
 /***/ function(module, exports) {
 
-module.exports = "<div id=\"container\">\r\n    <div id=\"notation-component\">\r\n      <notation></notation>\r\n    </div>\r\n    <div id=\"play-control-component\">\r\n      <play-control></play-control>\r\n    </div>\r\n    <div id=\"note-info-component\">\r\n      <note-info></note-info>\r\n    </div>\r\n    <div id=\"keyboard-component\">\r\n      <keyboard></keyboard>\r\n    </div>\r\n    <p id=\"appDetails\">Built with Angular 2 - Source available on <a href=\"https://github.com/deanmalone/PianoPlay/\" target=\"_blank\">GitHub</a></p>\r\n</div>\r\n"
+module.exports = "<div id=\"container\">\r\n  <div id=\"side-content\">\r\n    <div class=\"panel\">\r\n      <play-control></play-control>\r\n    </div>\r\n    <div class=\"panel\">\r\n      <note-info></note-info>\r\n    </div>\r\n  </div>\r\n  <div id=\"notation-component\">\r\n    <notation></notation>\r\n  </div>\r\n  <div id=\"keyboard-component\">\r\n    <keyboard></keyboard>\r\n  </div>\r\n  <p id=\"appDetails\">Built with Angular 2 - Source available on <a href=\"https://github.com/deanmalone/PianoPlay/\" target=\"_blank\">GitHub</a></p>\r\n</div>\r\n"
 
 /***/ },
 
 /***/ 632:
 /***/ function(module, exports) {
 
-module.exports = "<h3>Learn Music Notation</h3>\r\n<p><b>Piano Play</b> is a simple and fun way for beginners to learn music notation.</p>\r\n<p>Simply press the keys on the <b>piano</b> and see the notes appear on the <b>piano score</b> and in the <b>Now playing</b> panel.</p>\r\n"
+module.exports = "<div class=\"panel\">\r\n  <div class=\"header\">Piano Play</div>\r\n  <div class=\"content\">\r\n    <span>A simple and fun way for beginners to learn music notation.</span><br />\r\n    <span>Simply press the keys on the <b>piano</b> and see the notes appear on the <b>piano score</b> and in the <b>Now playing</b> panel.</span>\r\n  </div>\r\n</div>\r\n"
 
 /***/ },
 
