@@ -92,7 +92,12 @@ var SoundService = (function () {
         // load wav files for each piano key.
         try {
             // Fix up prefixing
-            this.context = window.AudioContext || window.webkitAudioContext;
+            if (typeof AudioContext !== 'undefined') {
+                this.context = new AudioContext();
+            }
+            else if (typeof window.webkitAudioContext !== 'undefined') {
+                this.context = new window.webkitAudioContext();
+            }
             //this.context = new AudioContext();
             this.loadSounds();
         }
