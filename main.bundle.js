@@ -293,30 +293,42 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var SoundService = (function () {
     function SoundService() {
         this.buffers = {};
-        // load wav files for each piano key.
-        try {
-            // Hack to support AudioContext on iOS
-            if (typeof AudioContext !== 'undefined') {
-                this.context = new AudioContext();
-            }
-            else if (typeof window.webkitAudioContext !== 'undefined') {
-                this.context = new window.webkitAudioContext();
-            }
-            this.loadSounds();
-        }
-        catch (e) {
-            alert("Web Audio API is not supported in this browser");
-        }
+        this.initialized = false;
     }
+    SoundService.prototype.initialize = function () {
+        if (!this.initialized) {
+            console.log("initializing audio and loading sounds");
+            // load wav files for each piano key.
+            try {
+                // Hack to support AudioContext on iOS
+                if (typeof AudioContext !== 'undefined') {
+                    this.context = new AudioContext();
+                }
+                else if (typeof window.webkitAudioContext !== 'undefined') {
+                    this.context = new window.webkitAudioContext();
+                }
+                this.loadSounds();
+                this.initialized = true;
+            }
+            catch (e) {
+                alert("Web Audio API is not supported in this browser");
+            }
+        }
+    };
     SoundService.prototype.playNote = function (keyId) {
         if (keyId < 16 || keyId > 64) {
             new RangeError("Invalid keyId. The valid range of keyId is 16 to 64.");
         }
-        console.log("SoundService: playing key=" + keyId);
-        var source = this.context.createBufferSource();
-        source.buffer = this.buffers[keyId];
-        source.connect(this.context.destination);
-        source.start(0);
+        if (this.initialized) {
+            console.log("SoundService: playing key=" + keyId);
+            var source = this.context.createBufferSource();
+            source.buffer = this.buffers[keyId];
+            source.connect(this.context.destination);
+            source.start(0);
+        }
+        else {
+            console.log("Audio not loaded" + keyId);
+        }
     };
     SoundService.prototype.loadSounds = function () {
         // load the wav files for each piano key.
@@ -585,6 +597,9 @@ var AppComponent = (function () {
         this.delayMs = 1000;
         this.subscription = pianoService.notePlayed$.subscribe(function (note) { return _this.handleNotePlayed(note); });
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.soundService.initialize();
+    };
     AppComponent.prototype.handleModeSelected = function (selectedMode) {
         if (this.mode == selectedMode)
             return;
