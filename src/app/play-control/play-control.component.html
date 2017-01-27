@@ -1,0 +1,12 @@
+<div class="panel">
+   <div class="header">{{ title }}</div>
+   <div class="content">
+      <div class="row">
+         <span>A simple and fun way for beginners to learn music notation.</span>
+      </div>
+         <div class="row">
+            <button id="play-btn" class="btn btn-primary" [class.selected]="mode==PianoMode.Play" (click)="handlePlayBtnClick()">Play</button>
+            <button id="quiz-btn" class="btn btn-primary" [class.selected]="mode==PianoMode.Quiz" (click)="handleQuizBtnClick()">Quiz</button>
+         </div>
+   </div>
+</div>

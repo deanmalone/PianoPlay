@@ -1,0 +1,35 @@
+<div class="header-secondary">Quiz</div>
+<div class="content">
+   <div *ngIf="status == QuizStatus.Starting">
+      <div class="row">
+         <span>Select level:</span>
+         <select #level class="dropdown">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+         </select>
+      </div>
+      <div class="row">
+         <button id="start-btn" class="btn btn-secondary"(click)="handleStartBtnClick(level.value)">Start</button>
+      </div>
+   </div>
+   <div *ngIf="status == QuizStatus.InProgress">
+      <div class="row">
+         <span>{{ message }}</span>
+      </div>
+      <div class="row">
+         <span class="score-label">SCORE</span><span class="score">{{ score }}</span>
+      </div>
+   </div>
+   <div *ngIf="status == QuizStatus.Finished">
+      <div class="row">
+         <span>Your score: </span><span><b>{{ score }}</b> out of {{ total }}</span>
+      </div>
+      <div class="row">
+         <span>{{ description }}</span>
+      </div>
+      <div class="row">
+         <button id="tryagain-btn" class="btn btn-secondary"(click)="handleTryAgainBtnClick()">Try Again?</button>
+      </div>
+   </div>
+</div>

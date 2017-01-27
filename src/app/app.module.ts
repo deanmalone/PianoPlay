@@ -2,25 +2,42 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
-import { PianoModule } from './piano/piano.module';
-import { SharedModule } from './shared/shared.module';
+import { KeyboardComponent } from './keyboard/keyboard.component';
+import { NotationComponent } from './notation/notation.component';
+import { PlayControlComponent } from './play-control/play-control.component';
+import { NoteInfoComponent } from './note-info/note-info.component';
+import { QuizInfoComponent } from './quiz-info/quiz-info.component';
+import { PianoService } from './core/piano.service';
+import { PianoQuizService } from './core/piano-quiz.service';
+import { SoundService } from './core/sound.service';
+import { NotationService } from './notation/notation.service';
+import { SafePipe } from './shared/safe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent
+    KeyboardComponent,
+    NotationComponent,
+    PlayControlComponent,
+    NoteInfoComponent,
+    QuizInfoComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    PianoModule,
-    SharedModule
+    CommonModule
   ],
-  providers: [],
+  providers: [
+    PianoService,
+    SoundService,
+    NotationService,
+    PianoQuizService
+  ],
   exports: [],
   bootstrap: [AppComponent]
 })

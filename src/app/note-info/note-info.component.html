@@ -1,0 +1,16 @@
+<div class="header-secondary">{{title}}</div>
+<div class="container">
+  <div class="note-card" *ngIf="currentNote" (click)="playNote(currentNote)">
+      <span class="name">{{currentNote.fullname}}</span>
+      <span class="octave">OCTAVE {{currentNote.octave}}</span>
+  </div>
+  <div class="note-card-or" *ngIf="alternateNote">
+    <span> OR </span>
+  </div>
+  <div class="note-card" *ngIf="alternateNote" (click)="playNote(alternateNote)">
+    <span class="name">{{alternateNote.fullname}}</span>
+    <span class="octave">OCTAVE {{alternateNote.octave}}</span>
+  </div>
+  <div *ngIf="!currentNote"><p>Simply press the keys on the <b>piano</b> and see the notes appear on the <b>piano score</b> and in this panel.</p></div>
+</div>
+

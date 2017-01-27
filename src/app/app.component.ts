@@ -1,11 +1,143 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { Subscription }   from 'rxjs/Subscription';
+
+import { NotationComponent } from './notation/notation.component';
+import { QuizInfoComponent } from './quiz-info/quiz-info.component';
+import { NoteInfoComponent } from './note-info/note-info.component';
+
+import { PianoService } from './core/piano.service';
+import { SoundService } from './core/sound.service';
+import { PianoQuizService } from './core/piano-quiz.service';
+import { PianoNote } from './core/piano-note';
+import { PianoMode } from './core/piano-mode.enum';
+import { QuizStatus } from './core/quiz-status.enum';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+   selector: 'app-root',
+   templateUrl: './app.component.html',
+   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'PIANO PLAY';
-  showAbout = false;
+  PianoMode = PianoMode; // allows template access to PianoMode enum
+  title: string = 'Piano Play';
+  mode: PianoMode = PianoMode.Play;
+  subscription: Subscription;
+
+  quizScore: number = 0;
+  quizLength: number = 16;
+  quizStatus: QuizStatus = QuizStatus.None;
+  resultDescription: string = "";
+
+  private currentTestNote: PianoNote;
+  private timeoutId : any;
+  private delayMs = 1000;
+
+  @ViewChild(NotationComponent) notation: NotationComponent;
+
+  constructor(
+    private pianoService: PianoService,
+    private soundService: SoundService,
+    private pianoQuizService: PianoQuizService) {
+      this.subscription = pianoService.notePlayed$.subscribe(note=>this.handleNotePlayed(note));
+  }
+
+  ngOnInit() {
+    this.soundService.initialize();
+  }
+
+  handleModeSelected(selectedMode: PianoMode) {
+    if( this.mode == selectedMode ) return;
+
+    // Mode has been changed
+    this.mode = selectedMode;
+    if(this.mode == PianoMode.Quiz) {
+        this.newQuiz();
+    }
+
+    // Clear all notes from the notation component
+    this.notation.clear();
+  }
+
+  handleKeyPlayed(keyId: number) {
+    if(this.mode == PianoMode.Play) {
+        this.pianoService.playNoteByKeyId(keyId);
+    }
+    else {
+      // We are in Quiz mode, so just play the note sound
+      this.soundService.playNote(keyId);
+
+      // Update the quiz in progress
+      if(this.pianoQuizService.inProgress) {
+
+        this.pianoQuizService.recordResult(keyId, this.currentTestNote);
+        this.quizScore = this.pianoQuizService.score;
+
+        if(this.pianoQuizService.next()) {
+          this.currentTestNote= this.pianoService.getNote( this.pianoQuizService.getCurrentNoteId() );
+          this.notation.addNote(this.currentTestNote);
+        }
+        else {
+          setTimeout( () => this.finishQuiz(), this.delayMs );
+        }
+      }
+    }
+  }
+
+  handleNotePlayed(note: PianoNote){
+    this.soundService.playNote(note.keyId);
+  }
+
+  handleButtonClicked(data: any){
+    if (data.button == 'start') {
+      this.startQuiz(data.level);
+    }
+    else if(data.button = 'try-again') {
+      this.newQuiz();
+    }
+  }
+
+  private newQuiz() {
+    this.quizStatus = QuizStatus.Starting;
+  }
+
+  private startQuiz(level:string) {
+    let notes: string[] = [];
+    if(level == 'easy') {
+      notes = this.pianoService.getAllNaturalNoteIds(3,4); // middle 2 octaves only!
+    }
+    else if(level == 'medium') {
+      notes = this.pianoService.getAllNaturalNoteIds();
+    }
+    else {
+      // hard level
+      notes = this.pianoService.getAllNoteIds();
+    }
+
+    this.pianoQuizService.startQuiz(this.quizLength, notes);
+    this.quizStatus = QuizStatus.InProgress;
+    this.quizScore = this.pianoQuizService.score;
+    this.currentTestNote = this.pianoService.getNote( this.pianoQuizService.getCurrentNoteId() );
+    this.notation.addNote(this.currentTestNote);
+  }
+
+  private finishQuiz() {
+    if(this.quizScore == this.quizLength) {
+      this.resultDescription = "Perfect score, awesome job!";
+    }
+    else if(this.quizScore > (this.quizLength * 0.8)) {
+      this.resultDescription = "Great score, well done!";
+    }
+    else if(this.quizScore > (this.quizLength * 0.6)) {
+      this.resultDescription = "Good score!";
+    }
+    else if(this.quizScore > (this.quizLength * 0.4)) {
+      this.resultDescription = "Not bad, keep trying...";
+    }
+    else {
+      this.resultDescription = "Hmm, you need more practise...";
+    }
+
+    this.quizStatus = QuizStatus.Finished;
+  }
+
 }
