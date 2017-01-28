@@ -1,16 +1,12 @@
-.container {
-  text-align: center;
-  padding-left: 0px;
-}
-
-.container>div>p {
+.content {
+   text-align: center;
    padding: 10px;
 }
 
 .note-card {
   display: inline-block;
   text-align: center;
-  margin: 25px 10px;
+  margin: 20px 10px;
   padding: 0px;
   width: 90px;
    background-color: #FFFFF2;
@@ -33,7 +29,7 @@
   font-size: 22px;
   color: #435D6D;
   width: 30px;
-  padding-top: 60px;
+  padding-top: 50px;
   vertical-align: top;
 }
 

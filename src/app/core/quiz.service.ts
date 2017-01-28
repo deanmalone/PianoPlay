@@ -14,7 +14,6 @@ export class QuizService {
   private quizIndex = 0;
 
   inProgress: boolean = false;
-  score: number = 0;
   correct: number = 0;
   incorrect: number = 0;
   status: QuizStatus = QuizStatus.None;
@@ -38,7 +37,6 @@ export class QuizService {
 
     this.inProgress = true;
     this.quizIndex = 0;
-    this.score = 0;
     this.correct = 0;
     this.incorrect = 0;
 
@@ -69,7 +67,6 @@ export class QuizService {
 
     // update score
     if(selectedKeyId == actualNote.keyId){
-      this.score++;
       this.correct++;
     }
     else {

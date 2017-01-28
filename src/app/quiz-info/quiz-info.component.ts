@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, trigger, state, style, transition, animate } from '@angular/core';
 import { Subscription }   from 'rxjs/Subscription';
 
 import { PianoNote } from '../core/piano-note';
@@ -12,7 +12,6 @@ import { QuizStatus } from '../core/quiz-status.enum';
 })
 export class QuizInfoComponent implements OnInit {
   QuizStatus = QuizStatus; // allows template access to QuizStatus enum
-  @Input() score: number;
   @Input() correct: number;
   @Input() incorrect: number;
   @Input() total: number;
@@ -50,5 +49,4 @@ export class QuizInfoComponent implements OnInit {
      this.buttonClicked.emit( {button:'try-again'} );
      this.message = "";
   }
-
 }

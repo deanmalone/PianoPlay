@@ -23,7 +23,6 @@ export class AppComponent {
   mode: PianoMode = PianoMode.Play;
   subscription: Subscription;
 
-  quizScore: number = 0;
   quizCorrect: number = 0;
   quizIncorrect: number = 0;
   quizLength: number = 16;
@@ -73,7 +72,6 @@ export class AppComponent {
       if(this.quizService.inProgress) {
 
         this.quizService.recordResult(keyId, this.currentTestNote);
-        this.quizScore = this.quizService.score;
         this.quizCorrect = this.quizService.correct;
         this.quizIncorrect = this.quizService.incorrect;
 
@@ -121,7 +119,6 @@ export class AppComponent {
 
     this.quizService.startQuiz(this.quizLength, notes);
     this.quizStatus = QuizStatus.InProgress;
-    this.quizScore = this.quizService.score;
     this.quizCorrect = this.quizService.correct;
     this.quizIncorrect = this.quizService.incorrect;
     this.currentTestNote = this.pianoService.getNote( this.quizService.getCurrentNoteId() );
@@ -129,20 +126,20 @@ export class AppComponent {
   }
 
   private finishQuiz() {
-    if(this.quizScore == this.quizLength) {
-      this.resultDescription = "Perfect score, awesome job!";
+    if(this.quizCorrect == this.quizLength) {
+      this.resultDescription = "Perfect score, awesome!";
     }
-    else if(this.quizScore > (this.quizLength * 0.8)) {
+    else if(this.quizCorrect > (this.quizLength * 0.8)) {
       this.resultDescription = "Great score, well done!";
     }
-    else if(this.quizScore > (this.quizLength * 0.6)) {
+    else if(this.quizCorrect > (this.quizLength * 0.6)) {
       this.resultDescription = "Good score!";
     }
-    else if(this.quizScore > (this.quizLength * 0.4)) {
-      this.resultDescription = "Not bad, keep trying...";
+    else if(this.quizCorrect > (this.quizLength * 0.4)) {
+      this.resultDescription = "Not bad, keep trying.";
     }
     else {
-      this.resultDescription = "Hmm, you need more practise...";
+      this.resultDescription = "Looks like you need more practice.";
     }
 
     this.quizStatus = QuizStatus.Finished;

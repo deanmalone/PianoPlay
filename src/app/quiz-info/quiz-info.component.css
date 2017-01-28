@@ -14,8 +14,7 @@
   display: inline-block;
   width: 100px;
   font-size: 18px;
-  font-weight: bold;
-  padding: 4px 6px 4px 6px;
+  padding: 4px;
   margin: 0;
   color: #FFFFF2;
   background-color: #617986;
@@ -24,9 +23,9 @@
 
 .score {
   display: inline-block;
-  width: 50px;
+  width: 35px;
   font-size: 18px;
-  padding: 4px 6px 4px 6px;
+  padding: 4px;
   margin: 0;
   color: #1C3747;
   background-color: #FFFFFF;
