@@ -10,7 +10,8 @@
       <div *ngIf="(mode == PianoMode.Quiz)" >
          <quiz-info
             [status]="quizStatus"
-            [score]="quizScore"
+            [correct]="quizCorrect"
+            [incorrect]="quizIncorrect"
             [total]="quizLength"
             [description]="resultDescription"
             (buttonClicked)="handleButtonClicked($event)">

@@ -7,7 +7,7 @@ import { NoteInfoComponent } from './note-info/note-info.component';
 
 import { PianoService } from './core/piano.service';
 import { SoundService } from './core/sound.service';
-import { PianoQuizService } from './core/piano-quiz.service';
+import { QuizService } from './core/quiz.service';
 import { PianoNote } from './core/piano-note';
 import { PianoMode } from './core/piano-mode.enum';
 import { QuizStatus } from './core/quiz-status.enum';
@@ -24,6 +24,8 @@ export class AppComponent {
   subscription: Subscription;
 
   quizScore: number = 0;
+  quizCorrect: number = 0;
+  quizIncorrect: number = 0;
   quizLength: number = 16;
   quizStatus: QuizStatus = QuizStatus.None;
   resultDescription: string = "";
@@ -37,7 +39,7 @@ export class AppComponent {
   constructor(
     private pianoService: PianoService,
     private soundService: SoundService,
-    private pianoQuizService: PianoQuizService) {
+    private quizService: QuizService) {
       this.subscription = pianoService.notePlayed$.subscribe(note=>this.handleNotePlayed(note));
   }
 
@@ -53,9 +55,10 @@ export class AppComponent {
     if(this.mode == PianoMode.Quiz) {
         this.newQuiz();
     }
-
-    // Clear all notes from the notation component
-    this.notation.clear();
+    else {
+      // Clear all notes from the notation component
+      this.notation.clear();
+    }
   }
 
   handleKeyPlayed(keyId: number) {
@@ -67,13 +70,15 @@ export class AppComponent {
       this.soundService.playNote(keyId);
 
       // Update the quiz in progress
-      if(this.pianoQuizService.inProgress) {
+      if(this.quizService.inProgress) {
 
-        this.pianoQuizService.recordResult(keyId, this.currentTestNote);
-        this.quizScore = this.pianoQuizService.score;
+        this.quizService.recordResult(keyId, this.currentTestNote);
+        this.quizScore = this.quizService.score;
+        this.quizCorrect = this.quizService.correct;
+        this.quizIncorrect = this.quizService.incorrect;
 
-        if(this.pianoQuizService.next()) {
-          this.currentTestNote= this.pianoService.getNote( this.pianoQuizService.getCurrentNoteId() );
+        if(this.quizService.next()) {
+          this.currentTestNote= this.pianoService.getNote( this.quizService.getCurrentNoteId() );
           this.notation.addNote(this.currentTestNote);
         }
         else {
@@ -97,6 +102,7 @@ export class AppComponent {
   }
 
   private newQuiz() {
+    this.notation.clear();
     this.quizStatus = QuizStatus.Starting;
   }
 
@@ -113,10 +119,12 @@ export class AppComponent {
       notes = this.pianoService.getAllNoteIds();
     }
 
-    this.pianoQuizService.startQuiz(this.quizLength, notes);
+    this.quizService.startQuiz(this.quizLength, notes);
     this.quizStatus = QuizStatus.InProgress;
-    this.quizScore = this.pianoQuizService.score;
-    this.currentTestNote = this.pianoService.getNote( this.pianoQuizService.getCurrentNoteId() );
+    this.quizScore = this.quizService.score;
+    this.quizCorrect = this.quizService.correct;
+    this.quizIncorrect = this.quizService.incorrect;
+    this.currentTestNote = this.pianoService.getNote( this.quizService.getCurrentNoteId() );
     this.notation.addNote(this.currentTestNote);
   }
 

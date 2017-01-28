@@ -6,7 +6,7 @@ import { QuizResult } from './quiz-result';
 import { QuizStatus } from './quiz-status.enum';
 
 @Injectable()
-export class PianoQuizService {
+export class QuizService {
 
   private quizLength = 16;
   private quizNotes: string[] = [];
@@ -15,33 +15,17 @@ export class PianoQuizService {
 
   inProgress: boolean = false;
   score: number = 0;
+  correct: number = 0;
+  incorrect: number = 0;
   status: QuizStatus = QuizStatus.None;
 
   // Observable sources
-  private pianoQuizResultSource = new Subject<QuizResult>();
+  private quizResultSource = new Subject<QuizResult>();
 
   // Observable streams
-  quizResult$ = this.pianoQuizResultSource.asObservable();
+  quizResult$ = this.quizResultSource.asObservable();
 
   constructor() {
-  }
-
-  initQuiz(quizLength: number, availableNotes: string[]) {
-
-    this.quizLength = quizLength;
-
-    // clear quiz data
-    this.quizNotes.length = 0;
-    this.quizResults.length = 0;
-
-    this.inProgress = true;
-    this.quizIndex = 0;
-    this.score = 0;
-
-    // generate random notes from the availableNotes array
-    for(let i=0;i<this.quizLength;i++) {
-      this.quizNotes.push( availableNotes[Math.floor(Math.random()* availableNotes.length)] );
-    }
   }
 
   startQuiz(quizLength: number, availableNotes: string[]) {
@@ -55,6 +39,8 @@ export class PianoQuizService {
     this.inProgress = true;
     this.quizIndex = 0;
     this.score = 0;
+    this.correct = 0;
+    this.incorrect = 0;
 
     // generate random notes from the availableNotes array
     for(let i=0;i<this.quizLength;i++) {
@@ -84,6 +70,10 @@ export class PianoQuizService {
     // update score
     if(selectedKeyId == actualNote.keyId){
       this.score++;
+      this.correct++;
+    }
+    else {
+      this.incorrect++;
     }
 
     let result = new QuizResult();
@@ -92,7 +82,7 @@ export class PianoQuizService {
     result.quizNumber = this.quizIndex + 1;
 
     this.quizResults.push(result);
-    this.pianoQuizResultSource.next(result);
+    this.quizResultSource.next(result);
   }
 
 }

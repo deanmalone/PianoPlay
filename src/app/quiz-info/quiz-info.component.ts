@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angu
 import { Subscription }   from 'rxjs/Subscription';
 
 import { PianoNote } from '../core/piano-note';
-import { PianoQuizService } from '../core/piano-quiz.service';
+import { QuizService } from '../core/quiz.service';
 import { QuizStatus } from '../core/quiz-status.enum';
 
 @Component({
@@ -13,6 +13,8 @@ import { QuizStatus } from '../core/quiz-status.enum';
 export class QuizInfoComponent implements OnInit {
   QuizStatus = QuizStatus; // allows template access to QuizStatus enum
   @Input() score: number;
+  @Input() correct: number;
+  @Input() incorrect: number;
   @Input() total: number;
   @Input() status: QuizStatus;
   @Input() description: string;
@@ -20,8 +22,8 @@ export class QuizInfoComponent implements OnInit {
   subscription: Subscription;
   message: string;
 
-  constructor(private pianoQuizService: PianoQuizService) {
-    this.subscription = pianoQuizService.quizResult$.subscribe(
+  constructor(private quizService: QuizService) {
+    this.subscription = quizService.quizResult$.subscribe(
       result => {
         if(result.selectedKeyId == result.actualNote.keyId){
           this.message = "\u2714 Correct, well done!";
@@ -33,7 +35,6 @@ export class QuizInfoComponent implements OnInit {
   }
 
   ngOnInit() {
-     this.message = "Press the correct piano key";
   }
 
   ngOnDestroy() {
@@ -47,7 +48,7 @@ export class QuizInfoComponent implements OnInit {
 
   handleTryAgainBtnClick() {
      this.buttonClicked.emit( {button:'try-again'} );
-     this.message = "Press the correct piano key";
+     this.message = "";
   }
 
 }

@@ -15,15 +15,18 @@
    </div>
    <div *ngIf="status == QuizStatus.InProgress">
       <div class="row">
-         <span>{{ message }}</span>
+         <span>Press the correct key on the piano.</span>
       </div>
       <div class="row">
-         <span class="score-label">SCORE</span><span class="score">{{ score }}</span>
+         <span class="score-label">SCORE</span><span class="score correct">{{ correct }}</span><span class="score incorrect">{{ incorrect }}</span>
+      </div>
+      <div class="row">
+         <span>{{ message }}</span>
       </div>
    </div>
    <div *ngIf="status == QuizStatus.Finished">
       <div class="row">
-         <span>Your score: </span><span><b>{{ score }}</b> out of {{ total }}</span>
+         <span>Your score: </span><span><b>{{ correct }}</b> out of {{ total }}</span>
       </div>
       <div class="row">
          <span>{{ description }}</span>
