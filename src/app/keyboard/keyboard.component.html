@@ -1,8 +1,8 @@
 <div id="p-wrapper">
     <ul id="piano">
         <li *ngFor="let pianoKey of pianoKeys">
-            <div class="anchor" (click)="keyPress(pianoKey.whiteKeyId)"></div>
-            <span *ngIf="pianoKey.blackKeyId" (click)="keyPress(pianoKey.blackKeyId)"></span>
+            <div class="anchor" [style.background]="getColor(pianoKey.whiteKeyId)" (click)="keyPress(pianoKey.whiteKeyId)"></div>
+            <span *ngIf="pianoKey.blackKeyId" [style.background]="getColor(pianoKey.blackKeyId)" (click)="keyPress(pianoKey.blackKeyId)"></span>
         </li>
     </ul>
 </div>
