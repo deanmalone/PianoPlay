@@ -2,11 +2,14 @@
 
 **Piano Play** is an Angular 2 application to help those learning the piano to read music notation.
 
-You can check out the app here: [Piano Play](http://deanmalone.net/PianoPlay).
+You can check out the app here: [Piano Play.](http://deanmalone.net/PianoPlay)
+
+For more details you can also read my [blog post.](http://deanmalone.net/post/piano-play/)
 
 
+![PianoPlay](http://deanmalone.net/img/piano-play.png)
 
-## Credits:
+### Credits:
 * [Joseph Woodward](http://josephwoodward.co.uk/) for his cool [Piano Note Trainer](https://github.com/JosephWoodward/Angular2PianoNoteTrainingGame), including the piano wav files.
 * [Taufik Nurrohman](http://cssdeck.com/user/tovic) for the awesome looking [CSS Piano](http://cssdeck.com/labs/pure-css3-piano)
 * The team at [RISM-Switzerland](http://rism-ch.org/) for their amazing open-source SVG-based music notation library [Verovio JavaScript toolkit](http://www.verovio.org/javascript.xhtml).
