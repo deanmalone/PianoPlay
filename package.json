@@ -10,7 +10,8 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "postinstall": "./node_modules/protractor/bin/webdriver-manager update"
   },
   "private": true,
   "dependencies": {
@@ -28,10 +29,10 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
+    "@angular/cli": "^1.0.0",
     "@angular/compiler-cli": "^2.3.1",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
-    "angular-cli": "1.0.0-beta.24",
     "codelyzer": "~2.0.0-beta.1",
     "gh-pages": "^0.12.0",
     "jasmine-core": "2.5.2",

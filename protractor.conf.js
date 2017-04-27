@@ -5,10 +5,13 @@
 var SpecReporter = require('jasmine-spec-reporter');
 
 exports.config = {
+  //fail if it takes over 11 seconds
   allScriptsTimeout: 11000,
+  //regex of what scripts to run
   specs: [
     './e2e/**/*.e2e-spec.ts'
   ],
+  //what browser?
   capabilities: {
     'browserName': 'chrome'
   },
