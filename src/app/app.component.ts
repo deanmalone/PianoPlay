@@ -33,7 +33,7 @@ export class AppComponent {
   private timeoutId : any;
   private delayMs = 1000;
 
-  @ViewChild(NotationComponent) notation: NotationComponent;
+  @ViewChild(NotationComponent, {static: false}) notation: NotationComponent;
 
   constructor(
     private pianoService: PianoService,

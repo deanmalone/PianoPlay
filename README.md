@@ -1,6 +1,6 @@
 # Piano Play
 
-**Piano Play** is an Angular 2 application to help those learning the piano to read music notation.
+**Piano Play** is an Angular application to help those learning the piano to read music notation.
 
 You can check out the app here: [Piano Play.](http://deanmalone.net/PianoPlay)
 

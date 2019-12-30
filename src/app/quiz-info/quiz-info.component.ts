@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Subscription }   from 'rxjs/Subscription';
 
 import { PianoNote } from '../core/piano-note';

@@ -12,7 +12,7 @@ import { QuizService } from '../core/quiz.service';
 export class KeyboardComponent implements OnInit {
   @Output() keyPlayed = new EventEmitter<number>()
 
-  private pianoKeys: IPianoKey[];
+  pianoKeys: IPianoKey[];
   private highlightedKeyId: number = 0;
 
   constructor(private quizService: QuizService) {
