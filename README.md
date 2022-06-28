@@ -1,27 +1,34 @@
-# PianoPlay
+# Piano Play UPGRADED TO ANGULAR 14
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+**Piano Play** is an Angular application to help those learning the piano to read music notation.
 
-## Development server
+This is just acopy of the original [PianoPlay](https://github.com/deanmalone/PianoPlay) updated to work with the lastest angular.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![PianoPlay](http://deanmalone.net/img/piano-play.png)
 
-## Code scaffolding
+## Angular CLI
+Piano Play was generated with [angular-cli](https://github.com/angular/angular-cli).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Development server
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Build
+### Build
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
+### Running unit tests
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+### Running end-to-end tests
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Before running the tests make sure you are serving the app via `ng serve`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Deploying to Github Pages
+Run `npm run deploy` to deploy to GitHub Pages.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Credits:
+* [deanmalone](https://github.com/deanmalone/PianoPlay) for the complete aplication
+* [Joseph Woodward](http://josephwoodward.co.uk/) for his cool [Piano Note Trainer](https://github.com/JosephWoodward/Angular2PianoNoteTrainingGame), including the piano wav files.
+* [Taufik Nurrohman](http://cssdeck.com/user/tovic) for the awesome looking [CSS Piano](http://cssdeck.com/labs/pure-css3-piano)
+* The team at [RISM-Switzerland](http://rism-ch.org/) for their amazing open-source SVG-based music notation library [Verovio JavaScript toolkit](http://www.verovio.org/javascript.xhtml).
+* Kim Biesbjerg for his [SafePipe](https://forum.ionicframework.com/t/inserting-html-via-angular-2-use-of-domsanitizationservice-bypasssecuritytrusthtml/62562/5
+) code.
