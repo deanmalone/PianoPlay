@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { Subscription }   from 'rxjs/Subscription';
+import { Subscription }   from 'rxjs';
 
 import { PianoNote } from '../core/piano-note';
 import { QuizService } from '../core/quiz.service';
@@ -8,22 +8,22 @@ import { QuizStatus } from '../core/quiz-status.enum';
 @Component({
   selector: 'quiz-info',
   templateUrl: './quiz-info.component.html',
-  styleUrls: ['./quiz-info.component.css']
+  styleUrls: ['./quiz-info.component.scss']
 })
 export class QuizInfoComponent implements OnInit {
   QuizStatus = QuizStatus; // allows template access to QuizStatus enum
-  @Input() correct: number;
-  @Input() incorrect: number;
-  @Input() total: number;
-  @Input() status: QuizStatus;
-  @Input() description: string;
+  @Input() correct!: number;
+  @Input() incorrect!: number;
+  @Input() total!: number;
+  @Input() status!: QuizStatus;
+  @Input() description!: string;
   @Output() buttonClicked = new EventEmitter();
   subscription: Subscription;
-  message: string;
+  message!: string;
 
   constructor(private quizService: QuizService) {
     this.subscription = quizService.quizResult$.subscribe(
-      result => {
+      ( result: { selectedKeyId: any; actualNote: { keyId: any; }; }) => {
         if(result.selectedKeyId == result.actualNote.keyId){
           this.message = "\u2714 Correct, well done!";
         }

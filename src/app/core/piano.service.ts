@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
+import { Subject } from 'rxjs';
 
 import { PianoNote }  from './piano-note';
 
@@ -7,8 +7,8 @@ import { PianoNote }  from './piano-note';
 @Injectable()
 export class PianoService {
 
-  private pianoKeyMap = {};
-  private pianoNoteMap = {};
+  private pianoKeyMap:{ [key: string] : Array<string>; } = {};
+  private pianoNoteMap:{ [key: string] : string; } = {};
 
   // Observable sources
   private pianoNotePlayedSource = new Subject<PianoNote>();
@@ -72,8 +72,8 @@ export class PianoService {
 
     // create pianoNoteMap, mapping noteIds to keyIds.
     Object.keys(this.pianoKeyMap).forEach(
-      keyId => this.pianoKeyMap[keyId].forEach(
-        note => this.pianoNoteMap[note] = keyId)
+      (keyId:string) => this.pianoKeyMap[keyId].forEach(
+        (note: string) => this.pianoNoteMap[note] = keyId)
       );
   }
 
@@ -113,7 +113,7 @@ export class PianoService {
       throw new Error("Invalid noteId");
     }
 
-    let alternateNote: PianoNote;
+    let alternateNote!: PianoNote;
     let keyId = parseInt(this.pianoNoteMap[noteId]);
     let notes = this.pianoKeyMap[keyId];
 

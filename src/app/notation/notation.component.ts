@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
-import { Subscription }   from 'rxjs/Subscription';
+import { Subscription }   from 'rxjs';
 
 import { NotationService } from './notation.service';
 import { PianoService } from '../core/piano.service';
@@ -13,17 +13,17 @@ declare var $: any;
 @Component({
   selector: 'notation',
   templateUrl: './notation.component.html',
-  styleUrls: ['./notation.component.css']
+  styleUrls: ['./notation.component.scss']
 })
 export class NotationComponent implements OnInit, AfterViewChecked  {
-  @Input() mode: PianoMode;
+  @Input() mode!: PianoMode;
   subscription: Subscription;
   notationAsSVG: any;
-  noteColor: string[];
+  noteColor!: string[];
 
   constructor(private pianoService: PianoService, private notationService: NotationService, private quizService: QuizService) {
-    this.subscription = pianoService.notePlayed$.subscribe(note=>this.handleNotePlayed(note));
-    quizService.quizResult$.subscribe(result=>this.handleQuizResult(result));
+    this.subscription = pianoService.notePlayed$.subscribe((note: PianoNote)=>this.handleNotePlayed(note));
+    quizService.quizResult$.subscribe((result: QuizResult)=>this.handleQuizResult(result));
   }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class NotationComponent implements OnInit, AfterViewChecked  {
 
   ngAfterViewChecked() {
     let self=this;
-    $("g.note").off().on('click', function() { self.noteClicked(this.id); });
+    // $("g.note").off().on('click', () => {self.noteClicked(this.id); });
 
     for(let i=0;i<this.noteColor.length; i++)
     {
