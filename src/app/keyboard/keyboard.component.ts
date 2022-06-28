@@ -7,7 +7,7 @@ import { QuizService } from '../core/quiz.service';
 @Component({
   selector: 'keyboard',
   templateUrl: './keyboard.component.html',
-  styleUrls: ['./keyboard.component.css']
+  styleUrls: ['./keyboard.component.scss']
 })
 export class KeyboardComponent implements OnInit {
   @Output() keyPlayed = new EventEmitter<number>()
@@ -17,7 +17,7 @@ export class KeyboardComponent implements OnInit {
 
   constructor(private quizService: QuizService) {
 
-    quizService.quizResult$.subscribe(result => this.handleQuizResult(result));
+    quizService.quizResult$.subscribe((result: QuizResult) => this.handleQuizResult(result));
 
     this.pianoKeys = [
       {whiteKeyId :16} ,
@@ -69,7 +69,7 @@ export class KeyboardComponent implements OnInit {
     }
   }
 
-  getColor(keyId) {
+  getColor(keyId: number) {
     if(keyId == this.highlightedKeyId){
       return "#f0e68c";
     }

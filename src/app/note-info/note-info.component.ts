@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription }   from 'rxjs/Subscription';
+import { Subscription }   from 'rxjs';
 
 import { PianoNote } from '../core/piano-note';
 import { PianoService } from '../core/piano.service';
@@ -7,18 +7,18 @@ import { PianoService } from '../core/piano.service';
 @Component({
   selector: 'note-info',
   templateUrl: './note-info.component.html',
-  styleUrls: ['./note-info.component.css']
+  styleUrls: ['./note-info.component.scss']
 })
 export class NoteInfoComponent implements OnInit {
 
   subscription: Subscription;
-  currentNote: PianoNote;
+  currentNote!: PianoNote;
   alternateNote?: PianoNote;
   title: string = "Play";
 
   constructor(private pianoService: PianoService) {
     this.subscription = pianoService.notePlayed$.subscribe(
-      pianoNote => {
+      (pianoNote: PianoNote) => {
          this.title = "Now playing";
          this.currentNote = pianoNote;
          this.alternateNote = this.pianoService.getAlternateNote(pianoNote.noteId);

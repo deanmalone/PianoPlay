@@ -1,0 +1,49 @@
+#container {
+    width: 1128px;
+    margin: 20px auto 0px;
+  }
+  
+  #side-content {
+    float: left;
+    width: 328px;
+  }
+  
+  #notation-component {
+    float: right;
+    width: 800px;
+    height: 392px;
+    background:#fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 0 20px 0;
+  }
+  
+  #keyboard-component {
+    clear: both;
+    width: 1128px;
+    margin: 0;
+  }
+  
+  #appDetails {
+    text-align: right;
+    color: rgba(0,0,0,0.8);
+    font-size: 14px;
+    margin: 0;
+    padding: 10px 5px 0 0 ;
+  }
+  
+  #appDetails a {
+    color: rgba(0,0,0,0.6);
+  }
+  
+  #appDetails a:hover {
+    text-decoration: none;
+  }
+  
+  .panel {
+    height: 186px;
+    padding: 0px;
+    margin: 0 20px 20px 0;
+    background:#FFFFF2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  

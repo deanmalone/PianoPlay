@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { KeyboardComponent } from './keyboard/keyboard.component';
-import { NotationComponent } from './notation/notation.component';
-import { PlayControlComponent } from './play-control/play-control.component';
-import { NoteInfoComponent } from './note-info/note-info.component';
-import { QuizInfoComponent } from './quiz-info/quiz-info.component';
 import { PianoService } from './core/piano.service';
 import { QuizService } from './core/quiz.service';
 import { SoundService } from './core/sound.service';
+import { KeyboardComponent } from './keyboard/keyboard.component';
+import { NotationComponent } from './notation/notation.component';
 import { NotationService } from './notation/notation.service';
+import { NoteInfoComponent } from './note-info/note-info.component';
+import { PlayControlComponent } from './play-control/play-control.component';
+import { QuizInfoComponent } from './quiz-info/quiz-info.component';
 import { SafePipe } from './shared/safe.pipe';
 
 @NgModule({
@@ -27,6 +28,7 @@ import { SafePipe } from './shared/safe.pipe';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
     CommonModule
   ],
@@ -36,7 +38,6 @@ import { SafePipe } from './shared/safe.pipe';
     NotationService,
     QuizService
   ],
-  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

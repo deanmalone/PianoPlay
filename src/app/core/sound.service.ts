@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class SoundService {
 
-  private context: AudioContext;
-  private buffers: {} = {};
+  private context!: AudioContext;
+  private buffers:{ [key: string] : AudioBuffer; } = {};
 
   constructor() {
   }

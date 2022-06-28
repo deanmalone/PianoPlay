@@ -1,5 +1,5 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { Subscription }   from 'rxjs/Subscription';
+import { Component, ViewChild } from '@angular/core';
+import { Subscription }   from 'rxjs';
 
 import { NotationComponent } from './notation/notation.component';
 import { QuizInfoComponent } from './quiz-info/quiz-info.component';
@@ -13,9 +13,9 @@ import { PianoMode } from './core/piano-mode.enum';
 import { QuizStatus } from './core/quiz-status.enum';
 
 @Component({
-   selector: 'app-root',
-   templateUrl: './app.component.html',
-   styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   PianoMode = PianoMode; // allows template access to PianoMode enum
@@ -29,17 +29,17 @@ export class AppComponent {
   quizStatus: QuizStatus = QuizStatus.None;
   resultDescription: string = "";
 
-  private currentTestNote: PianoNote;
-  private timeoutId : any;
+  private currentTestNote!: PianoNote;
   private delayMs = 1000;
 
-  @ViewChild(NotationComponent, {static: false}) notation: NotationComponent;
+  @ViewChild(NotationComponent, { static: false })
+  notation!: NotationComponent;
 
   constructor(
     private pianoService: PianoService,
     private soundService: SoundService,
     private quizService: QuizService) {
-      this.subscription = pianoService.notePlayed$.subscribe(note=>this.handleNotePlayed(note));
+      this.subscription = pianoService.notePlayed$.subscribe((note: PianoNote)=>this.handleNotePlayed(note));
   }
 
   ngOnInit() {
