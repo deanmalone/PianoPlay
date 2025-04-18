@@ -2,7 +2,7 @@ div {
    background-color:#ffffff;
 }
 
-/* >>> is alias for /deep/ which will force style down through the child component tree. */
+/* >>> is alias for ::ng-deep which will force style down through the child component tree. */
 /* match all ids that start with rest and hide them*/
 >>> [id^="rest"] {
    display: none;

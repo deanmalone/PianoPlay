@@ -5,9 +5,10 @@ import { PianoNote } from '../core/piano-note';
 import { PianoService } from '../core/piano.service';
 
 @Component({
-  selector: 'note-info',
-  templateUrl: './note-info.component.html',
-  styleUrls: ['./note-info.component.css']
+    selector: 'note-info',
+    templateUrl: './note-info.component.html',
+    styleUrls: ['./note-info.component.css'],
+    standalone: false
 })
 export class NoteInfoComponent implements OnInit {
 

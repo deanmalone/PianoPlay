@@ -5,9 +5,10 @@ import { QuizResult }  from '../core/quiz-result';
 import { QuizService } from '../core/quiz.service';
 
 @Component({
-  selector: 'keyboard',
-  templateUrl: './keyboard.component.html',
-  styleUrls: ['./keyboard.component.css']
+    selector: 'keyboard',
+    templateUrl: './keyboard.component.html',
+    styleUrls: ['./keyboard.component.css'],
+    standalone: false
 })
 export class KeyboardComponent implements OnInit {
   @Output() keyPlayed = new EventEmitter<number>()

@@ -13,9 +13,10 @@ import { PianoMode } from './core/piano-mode.enum';
 import { QuizStatus } from './core/quiz-status.enum';
 
 @Component({
-   selector: 'app-root',
-   templateUrl: './app.component.html',
-   styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent {
   PianoMode = PianoMode; // allows template access to PianoMode enum
@@ -33,7 +34,7 @@ export class AppComponent {
   private timeoutId : any;
   private delayMs = 1000;
 
-  @ViewChild(NotationComponent, {static: false}) notation: NotationComponent;
+  @ViewChild(NotationComponent) notation: NotationComponent;
 
   constructor(
     private pianoService: PianoService,

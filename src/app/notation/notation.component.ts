@@ -11,9 +11,10 @@ import { QuizResult }  from '../core/quiz-result';
 declare var $: any;
 
 @Component({
-  selector: 'notation',
-  templateUrl: './notation.component.html',
-  styleUrls: ['./notation.component.css']
+    selector: 'notation',
+    templateUrl: './notation.component.html',
+    styleUrls: ['./notation.component.css'],
+    standalone: false
 })
 export class NotationComponent implements OnInit, AfterViewChecked  {
   @Input() mode: PianoMode;

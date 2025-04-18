@@ -6,9 +6,10 @@ import { QuizService } from '../core/quiz.service';
 import { QuizStatus } from '../core/quiz-status.enum';
 
 @Component({
-  selector: 'quiz-info',
-  templateUrl: './quiz-info.component.html',
-  styleUrls: ['./quiz-info.component.css']
+    selector: 'quiz-info',
+    templateUrl: './quiz-info.component.html',
+    styleUrls: ['./quiz-info.component.css'],
+    standalone: false
 })
 export class QuizInfoComponent implements OnInit {
   QuizStatus = QuizStatus; // allows template access to QuizStatus enum

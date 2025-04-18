@@ -3,9 +3,10 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { PianoMode } from '../core/piano-mode.enum';
 
 @Component({
-  selector: 'play-control',
-  templateUrl: './play-control.component.html',
-  styleUrls: ['./play-control.component.css']
+    selector: 'play-control',
+    templateUrl: './play-control.component.html',
+    styleUrls: ['./play-control.component.css'],
+    standalone: false
 })
 export class PlayControlComponent implements OnInit {
   PianoMode = PianoMode; // allows template access to PianoMode enum

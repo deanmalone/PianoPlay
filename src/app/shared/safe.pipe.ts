@@ -5,7 +5,8 @@ import { Pipe } from '@angular/core';
 import { DomSanitizer, SafeHtml, SafeStyle, SafeScript, SafeUrl, SafeResourceUrl } from '@angular/platform-browser';
 
 @Pipe({
-	name: 'safe'
+    name: 'safe',
+    standalone: false
 })
 export class SafePipe {
 
